@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Name="VR_SuperHeavyConstructGun" ParentName="BaseGun" Abstract="True">
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<relicChance>0</relicChance>
+		<tools>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2.6</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="VEF.Things.ThingDefExtension">
+				<weaponDraftedDrawOffsets>
+					<north>
+						<drawOffset>(-0.15,0.0,-0.30)</drawOffset>
+						<angleOffset>60</angleOffset>
+					</north>
+					<east>
+						<drawOffset>(-0.10,0.00,-0.30)</drawOffset>
+					</east>
+					<south>
+						<drawOffset>(0.15,0.00,-0.30)</drawOffset>
+					</south>
+					<west>
+						<drawOffset>(0.10,0.0,-0.30)</drawOffset>
+					</west>
+				</weaponDraftedDrawOffsets>
+			</li>
+		</modExtensions>
+		<techLevel>Medieval</techLevel>
+	</ThingDef>
+
+	<!-- Hellsphere cannon -->
+	<ThingDef ParentName="VR_SuperHeavyConstructGun">
+		<defName>VR_ConstructGun_TonalIncinerator</defName>
+		<label>tonal incinerator</label>
+		<description>A ancient device that emits a sweeping ray that destructively detonates ambient magika.</description>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/Teslacannon</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(3,3)</drawSize>
+		</graphicData>
+		<uiIconScale>0.45</uiIconScale>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<relicChance>0</relicChance>
+		<statBases>
+			<MarketValue>1400</MarketValue>
+			<Mass>20</Mass>
+			<AccuracyTouch>1</AccuracyTouch>
+			<AccuracyShort>1</AccuracyShort>
+			<AccuracyMedium>1</AccuracyMedium>
+			<AccuracyLong>1</AccuracyLong>
+			<RangedWeapon_Cooldown>6.0</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>Construct_GiantTeslaCannon</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>FantasyBiotech.Verb_ColossusRay</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<warmupTime>5.0</warmupTime>
+				<range>15.9</range>
+				<minRange>3.9</minRange>
+				<beamFullWidthRange>6.9</beamFullWidthRange>
+				<burstShotCount>6</burstShotCount>
+				<showBurstShotStats>false</showBurstShotStats>
+				<beamWidth>30</beamWidth>
+				<ticksBetweenBurstShots>22</ticksBetweenBurstShots>
+				<beamDamageDef>Beam</beamDamageDef>
+				<soundCastTail>GunTail_Medium</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<ai_AvoidFriendlyFireRadius>6</ai_AvoidFriendlyFireRadius>
+				<ai_RangedAlawaysShootGroundBelowTarget>true</ai_RangedAlawaysShootGroundBelowTarget>
+				<ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<ai_TargetHasRangedAttackScoreOffset>50</ai_TargetHasRangedAttackScoreOffset>
+				<soundCastBeam>BeamGraser_Shooting</soundCastBeam>
+				<beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
+				<beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+				<beamMaxDeviation>0</beamMaxDeviation>
+				<beamCurvature>0.0</beamCurvature>
+				<beamMoteDef>Mote_ColossusBeamBase</beamMoteDef>
+				<beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
+				<beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+				<beamStartOffset>0.8</beamStartOffset>
+				<beamLineFleckChanceCurve>
+				  <points>
+					<li>(0, 0)</li>
+					<li>(0.65, 0.4)</li>
+					<li>(1, 0.75)</li>
+				  </points>
+				</beamLineFleckChanceCurve>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<!-- Ranged -->
+	<ThingDef ParentName="VR_SuperHeavyConstructGun">
+		<defName>VR_ConstructGun_HeavyBowGun</defName>
+		<label>heavy bow gun</label>
+		<description>A steam-charged amalgmation of crossbow and siege device.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/HeavyBowGun</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+			<Mass>8</Mass>
+			<AccuracyTouch>0.60</AccuracyTouch>
+			<AccuracyShort>0.80</AccuracyShort>
+			<AccuracyMedium>0.90</AccuracyMedium>
+			<AccuracyLong>0.92</AccuracyLong>
+			<RangedWeapon_Cooldown>2.1</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>VR_ConstructGun_HeavyBowGun</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>VR_Bullet_ConstructGun_HeavyBowGun</defaultProjectile>
+				<warmupTime>2.35</warmupTime>
+				<range>44.9</range>
+				<ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+				<burstShotCount>4</burstShotCount>
+				<soundCast>Bow_Large</soundCast>
+			</li>
+		</verbs>
+	</ThingDef>
+
+</Defs>

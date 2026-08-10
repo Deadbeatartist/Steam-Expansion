@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ScenarioDef ParentName="ScenarioBase">
+		<defName>Artificer</defName>
+		<label>The Artificer</label>
+		<description>You long knew that true greatness could not be achieved alone. Yet people proved fickle and untrustworthy, so you turned instead to the faithful service of your crafted constructs—your tireless hands, loyal guardians, and steadfast companions. As your influence grew, so too did the fear of those around you. It soon became clear you had to flee the grasp of suspicious folk.\n\nNow you have journeyed to this sparsely settled area, bringing a few of your metalbound creations with you. Here, at last, you have the freedom and space to pursue the heights of your art.\n\nNote: Because your starting character lacks many essential skills, this scenario is considered difficult.</description>
+		<scenario>
+			<summary>One artificer and a few servant constructs.</summary>
+			<playerFaction>
+				<def>PlayerFaction</def>
+				<factionDef>VR_ArtificerStart</factionDef>
+			</playerFaction>
+			<parts>
+
+				<!-- Game start dialog -->
+				<li Class="ScenPart_GameStartDialog">
+					<def>GameStartDialog</def>
+					<text>You long knew that true greatness could not be achieved alone. Yet people proved fickle and untrustworthy, so you turned instead to the faithful service of your crafted constructs—your tireless hands, loyal guardians, and steadfast companions. As your influence grew, so too did the fear of those around you. It soon became clear you had to flee the grasp of suspicious folk.\n\nNow you have journeyed to this sparsely settled area, bringing a few of your metalbound creations with you. Here, at last, you have the freedom and space to pursue the heights of your art.</text>
+					<closeSound>GameStartSting</closeSound>
+				</li>
+
+				<!-- Config pages -->
+				<li Class="ScenPart_ConfigPage_ConfigureStartingPawns_KindDefs">
+					<def>ConfigurePawnsKindDefs</def>
+					<pawnChoiceCount>8</pawnChoiceCount>
+					<leftBehindPawnKind>VR_Artificer</leftBehindPawnKind>
+					<kindCounts>
+						<li>
+							<kindDef>VR_Artificer</kindDef>
+							<count>1</count>
+							<requiredAtStart>true</requiredAtStart>
+						</li>
+					</kindCounts>
+				</li>
+
+				<!-- Player starting stuff spawn method-->
+				<li Class="ScenPart_PlayerPawnsArriveMethod">
+					<def>PlayerPawnsArriveMethod</def>
+					<method>Standing</method>
+				</li>
+        
+				<!-- Starting research -->
+				<li Class="ScenPart_StartingResearch">
+					<def>StartingResearch</def>
+					<project>VR_BasicConstructTech</project>
+				</li>
+
+				<!-- Starting mechs -->
+				<li Class="ScenPart_StartingMech">
+					<def>StartingMech</def>
+					<mechKind>VR_Construct_Lifter</mechKind>
+					<overseenByPlayerPawnChance>1</overseenByPlayerPawnChance>
+				</li>
+				<li Class="ScenPart_StartingMech">
+					<def>StartingMech</def>
+					<mechKind>VR_Construct_Constructoid</mechKind>
+					<overseenByPlayerPawnChance>1</overseenByPlayerPawnChance>
+				</li>
+
+				<!-- Player starting things -->
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Silver</thingDef>
+					<count>1000</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Pemmican</thingDef>
+					<count>200</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>MedicineHerbal</thingDef>
+					<count>10</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Uranium</thingDef>
+					<count>200</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Steel</thingDef>
+					<count>900</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>Plasteel</thingDef>
+					<count>100</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>VR_TonalCoreBasic</thingDef>
+					<count>5</count>
+				</li>
+
+				<li Class="ScenPart_DisableMapGen">
+					<def>DisableExostriderRemains</def>
+				</li>
+
+			</parts>
+		</scenario>
+	</ScenarioDef>
+
+</Defs>

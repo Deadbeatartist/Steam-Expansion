@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="HatMakeableBase">
+		<defName>VR_Apparel_ArtificerMonocle</defName>
+		<label>artificer monocle</label>
+		<description>An arcana infused monocle that slightly enhances an artificers's control bandwidth. This allows them to control more constructs.</description>
+		<techLevel>Medieval</techLevel>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/ArtificerMonocle/ArtificerMonocle</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.2</drawSize>
+		</graphicData>
+		<costList>
+			<Steel>50</Steel>
+			<Uranium>25</Uranium>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>VR_BasicConstructTech</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>4</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<statBases>
+			<WorkToMake>2100</WorkToMake>
+			<MaxHitPoints>60</MaxHitPoints>
+			<Mass>0.08</Mass>
+			<EquipDelay>2</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<MechBandwidth>3</MechBandwidth>
+		</equippedStatOffsets>
+		<recipeMaker>
+			<recipeUsers Inherit="False">
+				<li>TableMachining</li>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+			</recipeUsers>
+			<displayPriority>700</displayPriority>
+		</recipeMaker>
+		<apparel>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/ArtificerMonocle/ArtificerMonocle</wornGraphicPath>
+			<renderSkipFlags>
+				<li>None</li>
+			</renderSkipFlags>
+			<countsAsClothingForNudity>false</countsAsClothingForNudity>
+			<bodyPartGroups>
+				<li>UpperHead</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<scoreOffset>4</scoreOffset>
+			<mechanitorApparel>true</mechanitorApparel>
+		</apparel>
+		<tradeability>Sellable</tradeability>
+	</ThingDef>
+
+	<ThingDef ParentName="HatMakeableBase">
+		<defName>VR_Apparel_ArtificerGoggles</defName>
+		<label>artificer goggles</label>
+		<description>A pair of arcana infused googles that enhances an artificers's control bandwidth. This allows them to control more constructs.</description>
+		<techLevel>Medieval</techLevel>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/ArtificerGoggles/ArtificerGoggles</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.2</drawSize>
+		</graphicData>
+		<costList>
+			<Steel>60</Steel>
+			<Uranium>50</Uranium>
+		</costList>
+		<recipeMaker>
+			<researchPrerequisite>VR_StandardConstructTech</researchPrerequisite>
+			<skillRequirements>
+				<Crafting>5</Crafting>
+			</skillRequirements>
+		</recipeMaker>
+		<statBases>
+			<WorkToMake>2100</WorkToMake>
+			<MaxHitPoints>60</MaxHitPoints>
+			<Mass>0.08</Mass>
+			<EquipDelay>2</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<MechBandwidth>6</MechBandwidth>
+		</equippedStatOffsets>
+		<recipeMaker>
+			<recipeUsers Inherit="False">
+				<li>TableMachining</li>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+			</recipeUsers>
+			<displayPriority>700</displayPriority>
+		</recipeMaker>
+		<apparel>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/ArtificerGoggles/ArtificerGoggles</wornGraphicPath>
+			<renderSkipFlags>
+				<li>None</li>
+			</renderSkipFlags>
+			<countsAsClothingForNudity>false</countsAsClothingForNudity>
+			<bodyPartGroups>
+				<li>UpperHead</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<scoreOffset>4</scoreOffset>
+			<mechanitorApparel>true</mechanitorApparel>
+		</apparel>
+		<tradeability>Sellable</tradeability>
+	</ThingDef>
+
+	<ThingDef ParentName="HatMakeableBase">
+		<defName>VR_Apparel_ArtificeLordHelmet</defName>
+		<label>artificelord helmet</label>
+		<description>A heavy helmet infused to assist an artificerlord. The artificelord helmet dramatically amplifies an artificers's bandwidth, but is somewhat less protective than dedicated heavy armor.</description>
+		<techLevel>Medieval</techLevel>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/ArtificerLordHelmet/ArtificerLordHelmet</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>240</MaxHitPoints>
+			<Mass>3</Mass>
+			<ArmorRating_Sharp>0.69</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.345</ArmorRating_Heat>
+			<Insulation_Cold>3</Insulation_Cold>
+			<Insulation_Heat>1.5</Insulation_Heat>
+		</statBases>
+		<equippedStatOffsets>
+			<MechBandwidth>12</MechBandwidth>
+			<ShootingAccuracyPawn>-5</ShootingAccuracyPawn>
+			<MeleeHitChance>-0.5</MeleeHitChance>
+		</equippedStatOffsets>
+		<recipeMaker Inherit="False">
+			<researchPrerequisite>VR_UltraConstructTech</researchPrerequisite>
+			<recipeUsers>
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+			</recipeUsers>
+			<workSkill>Crafting</workSkill>
+			<unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+			<skillRequirements>
+				<Crafting>7</Crafting>
+			</skillRequirements>
+			<displayPriority>520</displayPriority>
+		</recipeMaker>
+		<costList Inherit="False">
+			<Steel>120</Steel>
+			<Plasteel>40</Plasteel>
+			<VR_PowerchipAdvanced>2</VR_PowerchipAdvanced>
+		</costList>
+		<apparel>
+			<tags>
+				<li>RoyalTier7</li>
+				<li>ArtificerArmor</li>
+			</tags>
+			<scoreOffset>4</scoreOffset>
+			<bodyPartGroups>
+				<li>UpperHead</li>
+			</bodyPartGroups>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<mechanitorApparel>true</mechanitorApparel>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/ArtificerLordHelmet/ArtificerLordHelmet</wornGraphicPath>
+			<forceEyesVisibleForRotations>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</forceEyesVisibleForRotations>
+		</apparel>
+	</ThingDef>
+
+	<ThingDef ParentName="HatMakeableBase">
+		<defName>VR_Apparel_ArtificerRespirator</defName>
+		<label>respirator</label>
+		<description>A flexible mask worn over the face with an embedded air filter. It dramatically reduces exposure to pollution through the lungs, but does not protect the skin on the rest of the body.\n\nIt prevents tox gas irritants from entering through the eyes and mouth.</description>
+		<techLevel>Medieval</techLevel>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/ArtificerMask/ArtificerMask</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.8</drawSize>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<WorkToMake>6000</WorkToMake>
+			<Mass>0.4</Mass>
+			<ArmorRating_Sharp>0.18</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+			<Insulation_Cold>1.5</Insulation_Cold>
+			<EquipDelay>0.8</EquipDelay>
+		</statBases>
+		<equippedStatOffsets>
+			<ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>
+		</equippedStatOffsets>
+		<recipeMaker>
+			<researchPrerequisite>Smithing</researchPrerequisite>
+			<unfinishedThingDef>UnfinishedMask</unfinishedThingDef>
+			<recipeUsers Inherit="False">
+				<li>ElectricSmithy</li>
+				<li>FueledSmithy</li>
+			</recipeUsers>
+			<displayPriority>215</displayPriority>
+		</recipeMaker>
+		<costList>
+			<Steel>20</Steel>
+		</costList>
+		<apparel>
+			<countsAsClothingForNudity>false</countsAsClothingForNudity>
+			<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+			<immuneToToxGasExposure>true</immuneToToxGasExposure>
+			<bodyPartGroups>
+				<li>Mouth</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/ArtificerMask/ArtificerMask</wornGraphicPath>
+			<renderSkipFlags>
+				<li>None</li>
+			</renderSkipFlags>
+			<drawData>
+				<dataNorth>
+					<layer>-3</layer>
+				</dataNorth>
+			</drawData>
+			<layers>
+				<li>Overhead</li>
+			</layers>
+			<tags>
+				<li>Medieval_Respirator</li>
+			</tags>
+			<forceEyesVisibleForRotations>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</forceEyesVisibleForRotations>
+		</apparel>
+	</ThingDef>
+
+</Defs>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Name="VR_LightConstructGun" ParentName="BaseGun" Abstract="True">
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<relicChance>0</relicChance>
+		<graphicData>
+			<drawSize>0.65</drawSize>
+		</graphicData>
+		<equippedDistanceOffset>-0.14</equippedDistanceOffset>
+		<tools>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2.6</cooldownTime>
+			</li>
+		</tools>
+		<modExtensions>
+			<li Class="VEF.Things.ThingDefExtension">
+				<weaponDraftedDrawOffsets>
+					<north>
+						<drawOffset>(-0.15,0.0,-0.10)</drawOffset>
+						<angleOffset>60</angleOffset>
+					</north>
+					<east>
+						<drawOffset>(-0.10,0.00,-0.10)</drawOffset>
+					</east>
+					<south>
+						<drawOffset>(0.15,0.00,-0.10)</drawOffset>
+					</south>
+					<west>
+						<drawOffset>(0.10,0.0,-0.10)</drawOffset>
+					</west>
+				</weaponDraftedDrawOffsets>
+			</li>
+		</modExtensions>
+		<techLevel>Medieval</techLevel>
+	</ThingDef>
+
+	<!-- Ranged -->
+	<ThingDef Name="VR_LightConstructGunRanged" ParentName="VR_LightConstructGun" Abstract="True">
+		<weaponClasses>
+			<li>Ranged</li>
+		</weaponClasses>
+	</ThingDef>
+
+	<ThingDef ParentName="VR_LightConstructGunRanged">
+		<defName>VR_ConstructGun_MiniBlunderbuss</defName>
+		<label>mini-blunderbuss</label>
+		<description>A compact, short-range blunderbuss designed to be mounted on a light combat construct.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/MiniBlunderbuss</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+			<Mass>1.5</Mass>
+			<AccuracyTouch>0.80</AccuracyTouch>
+			<AccuracyShort>0.87</AccuracyShort>
+			<AccuracyMedium>0.7</AccuracyMedium>
+			<AccuracyLong>0.55</AccuracyLong>
+			<RangedWeapon_Cooldown>1.7</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>ConstructGunShortRange</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>Bullet_VR_MiniBlunderbuss</defaultProjectile>
+				<warmupTime>1.2</warmupTime>
+				<range>12.9</range>
+				<burstShotCount>1</burstShotCount>
+				<ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+				<soundCast>Shot_Shotgun</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>6</muzzleFlashScale>
+			</li>
+		</verbs>
+	</ThingDef>
+
+</Defs>

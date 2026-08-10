@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Name="VR_ConstructMeleeWeaponHeavy" ParentName="VR_ConstructMeleeWeapon" Abstract="True">
+		<graphicData>
+			<drawSize>2.0</drawSize>
+		</graphicData>
+	</ThingDef>
+
+	<!-- Scyther Blade -->
+	<ThingDef ParentName="VR_ConstructMeleeWeaponHeavy">
+		<defName>VR_Construct_SteamSword_Heavy</defName>
+		<label>steam sword</label>
+		<description>steam blade</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponMelee/SteamSword</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<WorkToMake>14000</WorkToMake>
+			<Mass>20</Mass>
+		</statBases>
+		<weaponTags>
+			<li>VR_Construct_SteamSword_Heavy</li>
+		</weaponTags>
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>point</label>
+				<labelNoLocation>blade</labelNoLocation>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>35</power>
+				<armorPenetration>0.45</armorPenetration>
+				<cooldownTime>3.15</cooldownTime>
+			</li>
+			<li>
+				<label>edge</label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities>
+					<li>Cut</li>
+				</capacities>
+				<power>24</power>
+				<armorPenetration>0.20</armorPenetration>
+				<cooldownTime>2</cooldownTime>
+			</li>
+		</tools>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<relicChance>0</relicChance>
+	</ThingDef>
+
+	<ThingDef ParentName="VR_ConstructMeleeWeaponHeavy">
+		<defName>VR_Construct_SteamHammer_Heavy</defName>
+		<label>steam hammer</label>
+		<description>steam hammer</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponMelee/SteamHammer</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<WorkToMake>14000</WorkToMake>
+			<Mass>20</Mass>
+		</statBases>
+		<weaponTags>
+			<li>VR_Construct_SteamHammer_Heavy</li>
+		</weaponTags>
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>head</label>
+				<labelUsedInLogging>false</labelUsedInLogging>
+				<capacities>
+					<li>Demolish</li>
+				</capacities>
+				<power>35</power>
+				<cooldownTime>2.87</cooldownTime>
+				<armorPenetration>0.30</armorPenetration>
+			</li>
+		</tools>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<relicChance>0</relicChance>
+	</ThingDef>
+
+	<ThingDef ParentName="VR_ConstructMeleeWeaponHeavy">
+		<defName>VR_Construct_StakeDriver_Heavy</defName>
+		<label>stake driver</label>
+		<description>stake driver</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponMelee/Stakedriver</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<WorkToMake>14000</WorkToMake>
+			<Mass>20</Mass>
+		</statBases>
+		<weaponTags>
+			<li>VR_Construct_StakeDriver_Heavy</li>
+		</weaponTags>
+		<tools>
+			<li>
+				<label>handle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+			</li>
+			<li>
+				<label>point</label>
+				<labelNoLocation>stake</labelNoLocation>
+				<capacities>
+					<li>Stab</li>
+				</capacities>
+				<power>35</power>
+				<armorPenetration>0.40</armorPenetration>
+				<cooldownTime>4</cooldownTime>
+			</li>
+		</tools>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<relicChance>0</relicChance>
+	</ThingDef>
+
+</Defs>

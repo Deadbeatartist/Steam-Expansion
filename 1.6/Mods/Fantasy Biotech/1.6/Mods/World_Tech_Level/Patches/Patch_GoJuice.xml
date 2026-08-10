@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="FantasyBiotech.PatchOperation_ToggleSettings">
+		<settings>
+			<li>medievalGoJuice</li>
+		</settings>
+		<active Class="PatchOperationSequence">
+			<operations>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/WorldTechLevel.TechLevelConfigDef[defName="WTL_XenotypeDefs"]/entries/li[contains(.,"Hussar")]</xpath>
+					<value>
+						<li>
+							<defName>Hussar</defName>
+							<techLevel>Medieval</techLevel>
+						</li>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/WorldTechLevel.TechLevelConfigDef[defName="WTL_ThingDefs"]/entries/li[contains(.,"Neutroamine")]</xpath>
+					<value>
+						<li>
+							<defName>Neutroamine</defName>
+							<techLevel>Medieval</techLevel>
+							<priority>-1</priority>
+						</li>
+					</value>
+				</li>
+
+			</operations>
+		</active>
+	</Operation>
+
+	<Operation Class="FantasyBiotech.PatchOperation_ToggleSettings">
+		<settings>
+			<li>medievalGrowthVat</li>
+		</settings>
+		<active Class="PatchOperationSequence">
+			<operations>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/WorldTechLevel.TechLevelConfigDef[defName="WTL_ThingDefs"]/entries/li[contains(.,"HumanOvum")]</xpath>
+					<value>
+						<li>
+							<defName>HumanOvum</defName>
+							<techLevel>Medieval</techLevel>
+						</li>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/WorldTechLevel.TechLevelConfigDef[defName="WTL_ThingDefs"]/entries/li[contains(.,"HumanEmbryo")]</xpath>
+					<value>
+						<li>
+							<defName>HumanEmbryo</defName>
+							<techLevel>Medieval</techLevel>
+						</li>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/WorldTechLevel.TechLevelConfigDef[defName="WTL_PreceptDefs"]/entries/li[contains(.,"GrowthVat_Essential")]</xpath>
+					<value>
+						<li>
+							<defName>GrowthVat_Essential</defName>
+							<techLevel>Medieval</techLevel>
+						</li>
+					</value>
+				</li>
+				
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/WorldTechLevel.TechLevelConfigDef[defName="WTL_PreceptDefs"]/entries/li[contains(.,"GrowthVat_Prohibited")]</xpath>
+					<value>
+						<li>
+							<defName>GrowthVat_Essential</defName>
+							<techLevel>Medieval</techLevel>
+						</li>
+					</value>
+				</li>
+
+			</operations>
+		</active>
+	</Operation>
+
+</Patch>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef Name="VR_FantasyBiotech_GeneBuildingBase" ParentName="GeneBuildingBase" Abstract="True">
+		<researchPrerequisites Inherit="False">
+			<li>VR_BasicGenetics</li>
+		</researchPrerequisites>
+		<altitudeLayer>Building</altitudeLayer>
+		<designationCategory>Biotech</designationCategory>
+		<uiOrder>2100</uiOrder>
+		<pathCost>42</pathCost>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<buildingTags>
+				<li>Biotech</li>
+			</buildingTags>
+			<workTableRoomRole>Laboratory</workTableRoomRole>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+	</ThingDef>
+
+	<ThingDef ParentName="VR_FantasyBiotech_GeneBuildingBase">
+		<defName>VR_GeneRack</defName>
+		<label>gene rack</label>
+		<description>This building can store genepacks and make them usable to create new xenogerms, when placed near a graft forge. Large gene libraries require many gene banks.\n\nWhen fueled, gene banks prevent genepacks from deteriorating and will slowly repair deterioration.</description>
+		<graphicData>
+			<texPath>Things/Building/Misc/GeneRack/GeneRack</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3, 1.5)</drawSize>
+			<shadowData>
+				<volume>(1.7, 0.3, 0.85)</volume>
+			</shadowData>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+		<castEdgeShadows>true</castEdgeShadows>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<tickerType>Normal</tickerType>
+		<passability>PassThroughOnly</passability>
+		<canOverlapZones>false</canOverlapZones>
+		<fillPercent>0.4</fillPercent>
+		<size>(2, 1)</size>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToBuild>5000</WorkToBuild>
+			<Mass>20</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<thingCategories>
+			<li>BuildingsProduction</li>
+		</thingCategories>
+		<inspectorTabs>
+			<li>ITab_ContentsGenepackHolder</li>
+		</inspectorTabs>
+		<costList>
+			<Steel>50</Steel>
+		</costList>
+		<costStuffCount>60</costStuffCount>
+		<stuffCategories>
+			<li>Stony</li>
+			<li>Woody</li>
+			<li>Metallic</li>
+		</stuffCategories>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<descriptionHyperlinks>
+			<ThingDef>Genepack</ThingDef>
+			<ThingDef>VR_GraftForge</ThingDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="CompProperties_GenepackContainer">
+				<maxCapacity>8</maxCapacity>
+			</li>
+			<li Class="CompProperties_Facility">
+				<maxSimultaneous>100</maxSimultaneous>
+				<maxDistance>12.9</maxDistance>
+				<showMaxSimultaneous>false</showMaxSimultaneous>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>0.5</fuelConsumptionRate>
+				<fuelCapacity>5</fuelCapacity>
+				<fuelLabel>Hemogen</fuelLabel>
+				<fuelFilter>
+					<thingDefs>
+						<li>HemogenPack</li>
+					</thingDefs>
+				</fuelFilter>
+				<initialFuelPercent>0</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<externalTicking>true</externalTicking>
+				<autoRefuelPercent>0.05</autoRefuelPercent>
+			</li>
+		</comps>
+		<techLevel>Medieval</techLevel>
+	</ThingDef>
+
+	<ThingDef ParentName="VR_FantasyBiotech_GeneBuildingBase">
+		<defName>VR_GraftForge</defName>
+		<label>graft forge</label>
+		<description>A workbench for creating implantable xenogerms from genepacks stored in nearby gene racks. Genepacks are not consumed in this process and can be reused.</description>
+		<thingClass>FantasyBiotech.Building_GraftForge</thingClass>
+		<passability>PassThroughOnly</passability>
+		<castEdgeShadows>true</castEdgeShadows>
+		<fillPercent>0.4</fillPercent>
+		<graphicData>
+			<texPath>Things/Building/Misc/GraftForge/GraftForge</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5, 4)</drawSize>
+			<!-- <shadowData> -->
+			<!-- <volume>(2.55, 0.75, 1.7)</volume> -->
+			<!-- </shadowData> -->
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+		<descriptionHyperlinks>
+			<ThingDef>VR_GeneRack</ThingDef>
+			<ThingDef>VR_GeneProcessor</ThingDef>
+			<ThingDef>Genepack</ThingDef>
+			<ThingDef>Xenogerm</ThingDef>
+		</descriptionHyperlinks>
+		<tickerType>Normal</tickerType>
+		<size>(3, 2)</size>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0, 0, 2)</interactionCellOffset>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>12000</WorkToBuild>
+			<Mass>35</Mass>
+			<Flammability>0.5</Flammability>
+			<AssemblySpeedFactor>1.0</AssemblySpeedFactor>
+		</statBases>
+		<costList>
+			<Steel>200</Steel>
+		</costList>
+		<costStuffCount>60</costStuffCount>
+		<stuffCategories>
+			<li>Stony</li>
+			<li>Woody</li>
+			<li>Metallic</li>
+		</stuffCategories>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<comps>
+			<li Class="CompProperties_AffectedByFacilities">
+				<linkableFacilities>
+					<li>VR_GeneRack</li>
+					<li>VR_GeneProcessor</li>
+				</linkableFacilities>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>0.5</fuelConsumptionRate>
+				<fuelCapacity>5</fuelCapacity>
+				<fuelLabel>Hemogen</fuelLabel>
+				<fuelFilter>
+					<thingDefs>
+						<li>HemogenPack</li>
+					</thingDefs>
+				</fuelFilter>
+				<initialFuelPercent>0</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<externalTicking>false</externalTicking>
+				<autoRefuelPercent>0.05</autoRefuelPercent>
+				<canEjectFuel>false</canEjectFuel>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+			</li>
+		</comps>
+		<techLevel>Medieval</techLevel>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VR_GeneRemover</defName>
+		<label>gene remover</label>
+		<description>An surgery table that allows a doctor to extract a person's genes and create a genepack from them. The extracted genes will be randomly selected from the person's xenogenes and germline genes. You can force someone into the machine, but they won't like it.\n\nDue to the invasive nature of this extraction, there will be blood loss based on the doctor's skill.\n\nExtracting a person's genes while their genes are currently regrowing will kill them.\n\nGenes that require archite capsules are too complex to be extracted.</description>
+		<thingClass>FantasyBiotech.Building_GeneRemover</thingClass>
+		<containedPawnsSelectable>true</containedPawnsSelectable>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.4</fillPercent>
+		<castEdgeShadows>true</castEdgeShadows>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Building/Misc/GeneRemover/GeneRemover</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<drawSize>(2, 2)</drawSize>
+			<shadowData>
+				<volume>(1.7, 0.8, 1.7)</volume>
+			</shadowData>
+		</graphicData>
+		<size>(2, 2)</size>
+		<canOverlapZones>false</canOverlapZones>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0, 0, 2)</interactionCellOffset>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<designationCategory>Biotech</designationCategory>
+		<uiOrder>2100</uiOrder>
+		<researchPrerequisites>
+			<li>VR_BasicGenetics</li>
+		</researchPrerequisites>
+		<building>
+			<buildingTags>
+				<li>Biotech</li>
+			</buildingTags>
+			<workTableRoomRole>Laboratory</workTableRoomRole>
+		</building>
+		<statBases>
+			<MaxHitPoints>350</MaxHitPoints>
+			<WorkToBuild>9000</WorkToBuild>
+			<Mass>85</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<costList>
+			<Steel>200</Steel>
+		</costList>
+		<costStuffCount>60</costStuffCount>
+		<stuffCategories>
+			<li>Stony</li>
+			<li>Woody</li>
+			<li>Metallic</li>
+		</stuffCategories>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+	</ThingDef>
+	
+	<ThingDef ParentName="BuildingBase">
+		<defName>VR_GeneProcessor</defName>
+		<label>mutagenic furnace</label>
+		<description>Placed near a graft forge, it increases the maximum genetic complexity of the xenogerms you can assemble. Building multiple mutagenic furnace will increase the genetic complexity limit further.</description>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.4</fillPercent>
+		<pathCost>14</pathCost>
+		<rotatable>false</rotatable>
+		<tickerType>Normal</tickerType>
+		<graphicData>
+			<texPath>Things/Building/Misc/VR_GeneProcessor/VR_GeneProcessor_a</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2, 2)</drawSize>
+			<shadowData>
+				<volume>(1.5, 0.4, 1.5)</volume>
+			</shadowData>
+			<shaderType>CutoutComplex</shaderType>
+		</graphicData>
+		<size>(2, 2)</size>
+		<canOverlapZones>false</canOverlapZones>
+		<defaultPlacingRot>North</defaultPlacingRot>
+		<designationCategory>Biotech</designationCategory>
+		<uiOrder>2100</uiOrder>
+		<researchPrerequisites>
+			<li>VR_AdvancedGenetics</li>
+		</researchPrerequisites>
+		<descriptionHyperlinks>
+			<ThingDef>VR_GraftForge</ThingDef>
+			<ThingDef>VR_GeneRack</ThingDef>
+			<ThingDef>Genepack</ThingDef>
+			<ThingDef>Xenogerm</ThingDef>
+		</descriptionHyperlinks>
+		<statBases>
+			<MaxHitPoints>350</MaxHitPoints>
+			<WorkToBuild>9000</WorkToBuild>
+			<Mass>85</Mass>
+			<Flammability>0.5</Flammability>
+			<GeneticComplexityIncrease>2</GeneticComplexityIncrease>
+		</statBases>
+		<costList>
+			<Steel>100</Steel>
+		</costList>
+		<costStuffCount>60</costStuffCount>
+		<stuffCategories>
+			<li>Stony</li>
+			<li>Woody</li>
+			<li>Metallic</li>
+		</stuffCategories>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<building>
+			<buildingTags>
+				<li>Biotech</li>
+			</buildingTags>
+			<workTableRoomRole>Laboratory</workTableRoomRole>
+		</building>
+		<placeWorkers>
+			<li>PlaceWorker_ShowFacilitiesConnections</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<comps>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>10.0</fuelConsumptionRate>
+				<fuelCapacity>20.0</fuelCapacity>
+				<fuelConsumptionPerTickInRain>0.0006</fuelConsumptionPerTickInRain>
+				<fuelFilter>
+				  <thingDefs>
+					<li>WoodLog</li>
+				  </thingDefs>
+				</fuelFilter>
+				<initialFuelPercent>1</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+				<functionsInVacuum>false</functionsInVacuum>
+			</li>
+			 <li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>2</heatPerSecond>
+			</li>
+			<li Class="CompProperties_InspectString">
+				<compClass>CompInspectStringGeneProcessor</compClass>
+				<inspectString>Gene complexity increase</inspectString>
+			</li>
+			<li Class="CompProperties_Facility">
+				<maxSimultaneous>100</maxSimultaneous>
+				<maxDistance>12.9</maxDistance>
+				<showMaxSimultaneous>false</showMaxSimultaneous>
+			</li>
+		</comps>
+	</ThingDef>
+
+</Defs>

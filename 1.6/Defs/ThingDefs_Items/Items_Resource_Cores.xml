@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef Name="VR_TonalCoreBase" ParentName="ResourceBase" Abstract="True">
+		<soundInteract>Metal_Drop</soundInteract>
+		<soundDrop>Standard_Drop</soundDrop>
+		<stackLimit>10</stackLimit>
+		<graphicData>
+			<drawSize>0.85</drawSize>
+		</graphicData>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<MarketValue>200</MarketValue>
+			<Mass>1</Mass>
+			<Flammability>0.6</Flammability>
+			<DeteriorationRate>2.0</DeteriorationRate>
+		</statBases>
+		<intricate>true</intricate>
+		<techLevel>Medieval</techLevel>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef ParentName="VR_TonalCoreBase">
+		<defName>VR_TonalCoreBasic</defName>
+		<label>basic tonal core</label>
+		<description>The simplest possible tonal core, this is a tiny psychodynamic harmonic matrix unit housing a dull presences. Since this is only a basic-tier subcore, it can only drive the simplest of automatons.\n\nLike all constructs subcores, it contains a harmonic presence, albeit a very faint one.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/SubcoreBasicSteam</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<techHediffsTags>
+			<li>SubcoreBasic</li>
+		</techHediffsTags>
+		<statBases>
+			<WorkToMake>3000</WorkToMake>
+		</statBases>
+		<recipeMaker>
+			<researchPrerequisite>VR_BasicConstructTech</researchPrerequisite>
+			<workSpeedStat>SubcoreEncodingSpeed</workSpeedStat>
+			<workSkill>Crafting</workSkill>
+			<recipeUsers>
+				<li>VR_SubcoreEncoder_Steam</li>
+			</recipeUsers>
+			<mechanitorOnlyRecipe>true</mechanitorOnlyRecipe>
+			<unfinishedThingDef>UnfinishedSubcore</unfinishedThingDef>
+			<soundWorking>SubcoreEncoder_Working</soundWorking>
+		</recipeMaker>
+		<costList>
+			<Steel>50</Steel>
+			<Uranium>8</Uranium>
+		</costList>
+	</ThingDef>
+
+	<ThingDef ParentName="VR_TonalCoreBase">
+		<defName>VR_TonalCoreRegular</defName>
+		<label>standard tonal core</label>
+		<description>A standard-tier tonal core, this is a psychodynamic harmonic matrix supporting designed to house and sustain an active resonant subpersona. This particular core is stable and potent enough to drive a standard-tier automaton. \n\Constructs are more than brass and pistons, and this core is far more than a mechanical processor. Its thinking tonal echo grants it adaptability far beyond traditional machines. However, such cores cannot be fabricated by conventional means — they must be tuned and imprinted through analog tonal transference from an existing harmonic mind.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/SubcoreRegularSteam</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>300</MarketValue>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="VR_TonalCoreBase">
+		<defName>VR_TonalCoreHigh</defName>
+		<label>advanced tonal core</label>
+		<description>An advanced-tier tonal core, this psychodynamic harmonic matrix supports an sophisticated and resonant subpersona. This particular core is of the strongest tier, can can power complex ultra-heavy automatons.\n\The subpersona inside this core approaches a mortal mind in its complexity, though it is of a very different nature. Like any such mind, it has a noticeable psychic presence.\n\nThis subcore could only have been produced by full tonal transference from a living mind, destroying them utterly in the process</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/SubcoreHighSteam</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+		</statBases>
+	</ThingDef>
+
+</Defs>

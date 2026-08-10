@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- <operation class="patchoperationreplace"> -->
+		<!-- <xpath>defs/factiondef[defname="mechanoid"]/requiredcountatgamestart</xpath> -->
+		<!-- <value> -->
+			<!-- <requiredcountatgamestart>0</requiredcountatgamestart> -->
+		<!-- </value> -->
+	<!-- </operation> -->
+	
+	<!-- <operation class="patchoperationreplace"> -->
+		<!-- <xpath>defs/factiondef[defname="mechanoid"]/maxconfigurableatworldcreation</xpath> -->
+		<!-- <value> -->
+			<!-- <maxconfigurableatworldcreation>0</maxconfigurableatworldcreation> -->
+		<!-- </value> -->
+	<!-- </operation> -->
+
+</Patch>

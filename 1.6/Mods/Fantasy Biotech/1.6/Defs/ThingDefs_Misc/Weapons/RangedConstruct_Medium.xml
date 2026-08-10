@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Name="VR_MediumConstructGun" ParentName="BaseGun" Abstract="True">
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<relicChance>0</relicChance>
+		<tools>
+			<li>
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+					<li>Poke</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2.6</cooldownTime>
+			</li>
+		</tools>
+		<techLevel>Medieval</techLevel>
+	</ThingDef>
+
+	<!-- Ranged -->
+	<ThingDef ParentName="VR_MediumConstructGun">
+		<defName>VR_ConstructGun_Crossbow</defName>
+		<label>steam crossbow</label>
+		<description>A mechanical crossbow with a steam-charged catapult.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/SteamDoubleCrossbow</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+			<Mass>8</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.85</AccuracyShort>
+			<AccuracyMedium>0.85</AccuracyMedium>
+			<AccuracyLong>0.75</AccuracyLong>
+			<RangedWeapon_Cooldown>2.7</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>VR_ConstructGun_Crossbow</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>VR_Bullet_ConstructGun_Crossbow</defaultProjectile>
+				<warmupTime>1.7</warmupTime>
+				<range>29.9</range>
+				<soundCast>Bow_Large</soundCast>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<equippedDistanceOffset>-0.14</equippedDistanceOffset>
+		<modExtensions>
+			<li Class="VEF.Things.ThingDefExtension">
+				<weaponDraftedDrawOffsets>
+					<north>
+						<drawOffset>(0.00,0.0,0.10)</drawOffset>
+						<angleOffset>60</angleOffset>
+					</north>
+					<east>
+						<drawOffset>(-0.20,0.00,0.00)</drawOffset>
+					</east>
+					<south>
+						<drawOffset>(0.15,0.00,0.00)</drawOffset>
+					</south>
+					<west>
+						<drawOffset>(0.20,0.0,0.00)</drawOffset>
+					</west>
+				</weaponDraftedDrawOffsets>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<!-- Medium Flamer -->
+	<ThingDef ParentName="VR_MediumConstructGun">
+		<defName>VR_ConstructGun_Flamer</defName>
+		<label>flame cannon</label>
+		<description>Emits a single blast of alchemical flame, igniting terrain and melting armor</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/Flamer</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1,1)</drawSize>
+		</graphicData>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<relicChance>0</relicChance>
+		<statBases>
+			<MarketValue>1400</MarketValue>
+			<Mass>20</Mass>
+			<AccuracyTouch>0.40</AccuracyTouch>
+			<AccuracyShort>0.48</AccuracyShort>
+			<AccuracyMedium>0.35</AccuracyMedium>
+			<AccuracyLong>0.26</AccuracyLong>
+			<RangedWeapon_Cooldown>4.0</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>VR_Construct_Flamer</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>FantasyBiotech.Verb_ConstructFlame</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<warmupTime>0</warmupTime>
+				<range>6.9</range>
+				<ticksBetweenBurstShots>30</ticksBetweenBurstShots>
+				<burstShotCount>1</burstShotCount>
+				<soundCast>Shot_MiniFlameblaster</soundCast>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<meleeDamageBaseAmount>3</meleeDamageBaseAmount>
+				<meleeArmorPenetrationBase>0.2</meleeArmorPenetrationBase>
+			</li>
+		</verbs>
+		<equippedDistanceOffset>-0.14</equippedDistanceOffset>
+		<modExtensions>
+			<li Class="VEF.Things.ThingDefExtension">
+				<weaponDraftedDrawOffsets>
+					<north>
+						<drawOffset>(-0.15,0.0,-0.10)</drawOffset>
+						<angleOffset>60</angleOffset>
+					</north>
+					<east>
+						<drawOffset>(-0.30,0.00,0.00)</drawOffset>
+					</east>
+					<south>
+						<drawOffset>(0.00,0.00,0.00)</drawOffset>
+					</south>
+					<west>
+						<drawOffset>(0.30,0.0,0.00)</drawOffset>
+					</west>
+				</weaponDraftedDrawOffsets>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="VR_MediumConstructGun">
+		<defName>VR_ConstructGun_LightningGun</defName>
+		<label>lightning gun</label>
+		<description>An experimental minituraized version of device seen in larger constructs. It emits a dangerous blast of electrical energy.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/MiniTeslacannon</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.5</drawSize>
+		</graphicData>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+			<Mass>8</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.85</AccuracyShort>
+			<AccuracyMedium>0.85</AccuracyMedium>
+			<AccuracyLong>0.75</AccuracyLong>
+			<RangedWeapon_Cooldown>2.7</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>VR_ConstructGun_LightningGun</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>VR_Bullet_LightingGunProjectile</defaultProjectile>
+				<warmupTime>1.7</warmupTime>
+				<range>11.9</range>
+				<soundCast>ChargeLance_Fire</soundCast>
+				<soundCastTail>GunTail_Heavy</soundCastTail>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+		<equippedDistanceOffset>-0.14</equippedDistanceOffset>
+		<modExtensions>
+			<li Class="VEF.Things.ThingDefExtension">
+				<weaponDraftedDrawOffsets>
+					<north>
+						<drawOffset>(-0.15,0.0,-0.10)</drawOffset>
+						<angleOffset>60</angleOffset>
+					</north>
+					<east>
+						<drawOffset>(-0.30,0.00,0.00)</drawOffset>
+					</east>
+					<south>
+						<drawOffset>(0.00,0.00,0.00)</drawOffset>
+					</south>
+					<west>
+						<drawOffset>(0.30,0.0,0.00)</drawOffset>
+					</west>
+				</weaponDraftedDrawOffsets>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+</Defs>

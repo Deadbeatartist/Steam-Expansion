@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Scyther Equivalent -->
+	<ThingDef ParentName="VR_HeavyConstruct" Name="VR_Construct_Centurion">
+		<defName>VR_Construct_Centurion</defName>
+		<label>sentinel (melee)</label>
+		<description>A larger combat mech designed as a shock trooper. They are known to extremely dangerous for even the most well equipped adventurer.</description>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<body>VR_ConstructBipedal</body>
+			<baseBodySize>1.6</baseBodySize>
+			<baseHealthScale>2.16</baseHealthScale>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_Scyther_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_Scyther_Death</soundDeath>
+					<soundCall>Pawn_Mech_Scyther_Call</soundCall>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_MechanoidSlash_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+			<detritusLeavings>
+				<li>
+					<def>VR_ChunkConstructSlag</def>
+					<spawnChance>0.1</spawnChance>
+				</li>
+				<li>
+					<def>VR_ChunkConstructSlag</def>
+					<spawnChance>0.1</spawnChance>
+				</li>
+			</detritusLeavings>
+		</race>
+		<statBases>
+			<BandwidthCost MayRequire="Ludeon.RimWorld.Biotech">4</BandwidthCost>
+		</statBases>
+	</ThingDef>
+
+	<PawnKindDef Name="VR_HeavyConstructKind_CenturionMeleeBase" ParentName="VR_HeavyConstructKind">
+		<defName>VR_Construct_Centurion</defName>
+		<label>sentinel (melee)</label>
+		<race>VR_Construct_Centurion</race>
+		<combatPower>250</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/CenturionSteam</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/CenturionSteam</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.5</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<defendPointRadius>0</defendPointRadius>
+		<weaponTags>
+			<li>VR_Construct_SteamSword_Heavy</li>
+			<li>VR_Construct_SteamHammer_Heavy</li>
+			<li>VR_Construct_StakeDriver_Heavy</li>
+		</weaponTags>
+		<techHediffsChance>1</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+	</PawnKindDef>
+
+	<!-- Crafting -->
+	<ThingDef ParentName="VR_Construct_Centurion">
+		<defName>VR_Construct_Centurion_Sword</defName>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VR_HeavyConstructKind_CenturionMeleeBase">
+		<defName>VR_Construct_Centurion_Sword</defName>
+		<label>sentinel (sword)</label>
+		<race>VR_Construct_Centurion_Sword</race>
+		<weaponTags Inherit="False">
+			<li>VR_Construct_SteamSword_Heavy</li>
+		</weaponTags>
+	</PawnKindDef>
+
+	<ThingDef ParentName="VR_Construct_Centurion">
+		<defName>VR_Construct_Centurion_Hammer</defName>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VR_HeavyConstructKind_CenturionMeleeBase">
+		<defName>VR_Construct_Centurion_Hammer</defName>
+		<label>sentinel (hammer)</label>
+		<race>VR_Construct_Centurion_Hammer</race>
+		<weaponTags Inherit="False">
+			<li>VR_Construct_SteamHammer_Heavy</li>
+		</weaponTags>
+	</PawnKindDef>
+
+	<ThingDef ParentName="VR_Construct_Centurion">
+		<defName>VR_Construct_Centurion_StakeDriver</defName>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VR_HeavyConstructKind_CenturionMeleeBase">
+		<defName>VR_Construct_Centurion_StakeDriver</defName>
+		<label>sentinel (stakedriver)</label>
+		<race>VR_Construct_Centurion_StakeDriver</race>
+		<weaponTags Inherit="False">
+			<li>VR_Construct_StakeDriver_Heavy</li>
+		</weaponTags>
+	</PawnKindDef>
+
+	<ThingDef ParentName="VR_Construct_Centurion">
+		<defName>VR_Construct_Centurion_Burner</defName>
+		<label>sentinel (burner)</label>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VR_HeavyConstructKind">
+		<defName>VR_Construct_Centurion_Burner</defName>
+		<label>sentinel (burner)</label>
+		<race>VR_Construct_Centurion_Burner</race>
+		<combatPower>300</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/CenturionSteam</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/CenturionSteam</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.5</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<defendPointRadius>0</defendPointRadius>
+		<weaponTags>
+			<li>VR_Construct_HeavyFlamer</li>
+		</weaponTags>
+		<techHediffsChance>1</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+	</PawnKindDef>
+
+	<ThingDef ParentName="VR_Construct_Centurion">
+		<defName>VR_Construct_Centurion_Shooter</defName>
+		<label>sentinel (ranged)</label>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VR_HeavyConstructKind">
+		<defName>VR_Construct_Centurion_Shooter</defName>
+		<label>sentinel (ranged)</label>
+		<race>VR_Construct_Centurion_Shooter</race>
+		<combatPower>250</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/CenturionSteam</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/CenturionSteam</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.5</drawSize>
+					<shadowData>
+						<volume>(0.4, 0.8, 0.4)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<defendPointRadius>0</defendPointRadius>
+		<weaponTags>
+			<li>VR_ConstructGun_HeavyCrossbow</li>
+		</weaponTags>
+		<techHediffsChance>1</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+	</PawnKindDef>
+	
+	<ThingDef ParentName="VR_HeavyConstruct">
+		<defName>VR_Construct_Delver</defName>
+		<label>delver</label>
+		<description>A heavy construct built for mining in treacherous locations. While intended for excavation, the delver's gigantic drill and ultra-thick armor makes it a dangerous force in combat.</description>
+		<statBases>
+			<MoveSpeed>1.9</MoveSpeed>
+			<ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.80</ArmorRating_Sharp>
+			<BandwidthCost>3</BandwidthCost>
+			<WorkSpeedGlobal>1.5</WorkSpeedGlobal>
+		</statBases>
+		<race>
+			<body>VR_Construct_Tunneler</body>
+			<baseBodySize>3.5</baseBodySize>
+			<baseHealthScale>1.5</baseHealthScale>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_Tunneler_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_Tunneler_Death</soundDeath>
+					<soundCall>Pawn_Mech_Tunneler_Call</soundCall>
+				</li>
+			</lifeStageAges>
+			<bulletStaggerEffecterDef>TunnelerSlowedDown</bulletStaggerEffecterDef>
+			<mechEnabledWorkTypes>
+				<li>Mining</li>
+			</mechEnabledWorkTypes>
+			<detritusLeavings>
+				<li>
+					<def>VR_ChunkConstructSlag</def>
+					<texOverrideIndex>0</texOverrideIndex>
+					<spawnChance>0.5</spawnChance>
+				</li>
+				<li>
+					<def>VR_ChunkConstructSlag</def>
+					<texOverrideIndex>3</texOverrideIndex>
+					<spawnChance>0.5</spawnChance>
+				</li>
+				<li>
+					<def>VR_ChunkConstructSlag</def>
+					<texOverrideIndex>1</texOverrideIndex>
+					<spawnChance>0.5</spawnChance>
+				</li>
+			</detritusLeavings>
+		</race>
+		<tools>
+			<li>
+				<label>drill</label>
+				<capacities>
+					<li>Demolish</li>
+				</capacities>
+				<power>50</power>
+				<armorPenetration>0.60</armorPenetration>
+				<cooldownTime>4.5</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+		</tools>
+	</ThingDef>
+  
+	<PawnKindDef ParentName="VR_HeavyConstructKind">
+		<defName>VR_Construct_Delver</defName>
+		<label>delver</label>
+		<race>VR_Construct_Delver</race>
+		<allowInMechClusters>false</allowInMechClusters>
+		<combatPower>250</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/ConstructTunneler</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/ConstructTunneler</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2.5</drawSize>
+					<shadowData>
+						<volume>(0.6, 0.8, 0.6)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<!-- <isGoodBreacher>true</isGoodBreacher> -->
+		<!-- <canBeSapper>true</canBeSapper> -->
+		<!-- <abilities> -->
+		<!-- <li>smokepopmech</li> -->
+		<!-- </abilities> -->
+		<controlGroupPortraitZoom>1</controlGroupPortraitZoom>
+	</PawnKindDef>
+
+</Defs>

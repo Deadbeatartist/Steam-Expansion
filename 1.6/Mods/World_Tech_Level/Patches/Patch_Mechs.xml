@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="FantasyBiotech.PatchOperation_ToggleSettings">
+		<settings>
+			<li>replaceMechanoids</li>
+		</settings>
+		<active Class="PatchOperationSequence">
+			<operations>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/WorldTechLevel.TechLevelConfigDef[defName="WTL_RuleDefs"]/entries/li[contains(.,"SleepingMechanoids")]</xpath>
+					<value>
+						<li>
+							<defName>SleepingMechanoids</defName>
+							<techLevel>Medieval</techLevel>
+						</li>
+					</value>
+				</li>
+
+			</operations>
+		</active>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/WorldTechLevel.TechLevelConfigDef[defName="WTL_PreceptDefs"]/entries/li[contains(.,"MechanoidLabor_Enhanced")]</xpath>
+		<value>
+			<li>
+				<defName>MechanoidLabor_Enhanced</defName>
+				<techLevel>Medieval</techLevel>
+			</li>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/WorldTechLevel.TechLevelConfigDef[defName="WTL_IncidentDefs"]/entries</xpath>
+		<value>
+			<li>
+				<defName>VR_GiveQuest_Intro_Artificer</defName>
+				<techLevel>Medieval</techLevel>
+			</li>
+			<li>
+				<defName>VR_GiveQuest_AncientComplex_Artificer</defName>
+				<techLevel>Medieval</techLevel>
+			</li>
+			<li>
+				<defName>VR_ConstructCluster</defName>
+				<techLevel>Medieval</techLevel>
+			</li>
+		</value>
+	</Operation>
+
+</Patch>

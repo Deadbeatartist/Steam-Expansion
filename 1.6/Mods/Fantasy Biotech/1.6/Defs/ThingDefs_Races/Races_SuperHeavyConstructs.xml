@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef Abstract="True" Name="VR_SuperHeavyConstruct" ParentName="VR_HeavyConstruct">
+		<statBases>
+			<MarketValue>1600</MarketValue>
+			<ControlTakingTime>30</ControlTakingTime>
+			<BandwidthCost>5</BandwidthCost>
+			<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+			<PsychicSensitivity>0.75</PsychicSensitivity>
+			<MechEnergyLossPerHP>0.15</MechEnergyLossPerHP>
+		</statBases>
+		<race>
+			<baseHealthScale>4.5</baseHealthScale>
+			<mechWeightClass>UltraHeavy</mechWeightClass>
+		</race>
+		<butcherProducts Inherit="False">
+			<Steel>50</Steel>
+			<Plasteel>20</Plasteel>
+		</butcherProducts>
+	</ThingDef>
+	
+	<!-- Apocriton -->
+	<ThingDef ParentName="VR_BaseConstructWalker">
+		<defName>VR_Construct_Apocriton</defName>
+		<label>overseer</label>
+		<description>A large construct commander designed to coordinate and motivate other automatons during long extermination campaigns. combat mech designed as a shock trooper. Its most obvious power is its ability to resurrect recently-damaged constructs by restructuring their tonal signature.</description>
+		<statBases>
+			<MarketValue>1600</MarketValue>
+			<MoveSpeed>3.2</MoveSpeed>
+			<EnergyShieldRechargeRate>0.25</EnergyShieldRechargeRate>
+			<EnergyShieldEnergyMax>1.5</EnergyShieldEnergyMax>
+			<BandwidthCost>2</BandwidthCost>
+			<ControlTakingTime>18</ControlTakingTime>
+			<EMPResistance>0.8</EMPResistance>
+			<ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.60</ArmorRating_Sharp>
+		</statBases>
+		<race>
+			<body>Apocriton</body>
+			<mechWeightClass>UltraHeavy</mechWeightClass>
+			<lifeStageAges Inherit="False">
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_Apocriton_Wounded</soundWounded>
+					<soundAngry>Pawn_Mech_Apocriton_Call</soundAngry>
+					<soundDeath>Pawn_Mech_Apocriton_Death</soundDeath>
+					<soundCall>Pawn_Mech_Apocriton_Call</soundCall>
+				</li>
+			</lifeStageAges>
+			<baseHealthScale>5.2</baseHealthScale>
+			<soundAmbience>Pawn_Mech_Apocriton_Ambience</soundAmbience>
+			<detritusLeavings>
+				<li>
+					<def>VR_ChunkConstructSlag</def>
+					<spawnChance>0.1</spawnChance>
+				</li>
+				<li>
+					<def>VR_ChunkConstructSlag</def>
+					<spawnChance>0.1</spawnChance>
+				</li>
+				<li>
+					<def>VR_ChunkConstructSlag</def>
+					<spawnChance>0.1</spawnChance>
+				</li>
+			</detritusLeavings>
+		</race>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+		</tools>
+		<killedLeavingsPlayerHostile>
+			<VR_PowerchipAdvanced>1</VR_PowerchipAdvanced>
+		</killedLeavingsPlayerHostile>
+		<comps>
+			<li Class="CompProperties_Explosive">
+				<wickTicks>0</wickTicks>
+				<explosiveRadius>30.9</explosiveRadius>
+				<explodeOnKilled>true</explodeOnKilled>
+				<explosiveDamageType>MechBandShockwave</explosiveDamageType>
+				<propagationSpeed>0.5</propagationSpeed>
+				<chanceNeverExplodeFromDamage>1</chanceNeverExplodeFromDamage>
+				<extraInspectStringKey>MechStunPulseWarning</extraInspectStringKey>
+			</li>
+			<li Class="CompProperties_Effecter">
+				<effecterDef>ApocrionAttached</effecterDef>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VR_BaseConstructKind">
+		<defName>VR_Construct_Apocriton</defName>
+		<label>overseer</label>
+		<race>VR_Construct_Apocriton</race>
+		<combatPower>600</combatPower>
+		<maxPerGroup>3</maxPerGroup>
+		<isBoss>true</isBoss>
+		<allowInMechClusters>false</allowInMechClusters>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/ApocritonSteam</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/ApocritonSteam</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>3</drawSize>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponMoney>9999~9999</weaponMoney>
+		<weaponTags>
+			<li>VR_ConstructGun_HeavyBowGun</li>
+		</weaponTags>
+		<techHediffsChance>1</techHediffsChance>
+		<techHediffsMoney>9999~9999</techHediffsMoney>
+		<abilities>
+			<li>ResurrectionMech</li>
+		</abilities>
+		<skipResistant>true</skipResistant>
+	</PawnKindDef>
+
+	<!-- Diabolus -->
+	<ThingDef Name="VR_ConstructColossus" ParentName="VR_SuperHeavyConstruct">
+		<defName>VR_Construct_Colossus</defName>
+		<label>colossus (ranged)</label>
+		<description>An ultra-heavy construct equipped with a tonal incinerator. Made for breaking lines of enemies, it can cause widespread panic as the ray emitted will detonate raw magika in the near vicinity.</description>
+		<race>
+			<body>VR_ConstructBipedal</body>
+			<baseBodySize>4</baseBodySize>
+			<baseHealthScale>4.5</baseHealthScale>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_Diabolus_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_Diabolus_Death</soundDeath>
+					<soundCall>Pawn_Mech_Diabolus_Call</soundCall>
+				</li>
+			</lifeStageAges>
+			<detritusLeavings>
+				<li>
+					<def>VR_ChunkConstructSlag</def>
+					<texOverrideIndex>3</texOverrideIndex>
+					<spawnChance>0.75</spawnChance>
+				</li>
+				<li>
+					<def>VR_ChunkConstructSlag</def>
+					<texOverrideIndex>17</texOverrideIndex>
+					<spawnChance>0.75</spawnChance>
+				</li>
+				<li>
+					<def>VR_ChunkConstructSlag</def>
+					<texOverrideIndex>1</texOverrideIndex>
+					<spawnChance>0.75</spawnChance>
+				</li>
+			</detritusLeavings>
+		</race>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>18</power>
+				<cooldownTime>2.6</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+		</tools>
+		<comps> 
+			<li Class="FantasyBiotech.CompProperties_ColossusRayExplosion">
+				<defaultDelayTicks>150</defaultDelayTicks>
+				<radius>2.9</radius>
+				<damageAmount>30</damageAmount>
+				<damageDef>Vaporize</damageDef>
+				<armorPenetration>0.4</armorPenetration>
+			</li>
+		</comps>
+		<statBases>
+			<BandwidthCost>5</BandwidthCost>
+			<EMPResistance>0.6</EMPResistance>
+			<MoveSpeed>2.4</MoveSpeed>
+		</statBases>
+		<killedLeavingsPlayerHostile>
+			<VR_PowerchipBasic>1</VR_PowerchipBasic>
+		</killedLeavingsPlayerHostile>
+	</ThingDef>
+    
+	<PawnKindDef Name="VR_ConstructColossusKind" ParentName="VR_HeavyConstructKind">
+		<defName>VR_Construct_Colossus</defName>
+		<label>colossus (ranged)</label>
+		<race>VR_Construct_Colossus</race>
+		<combatPower>500</combatPower>
+		<maxPerGroup>3</maxPerGroup>
+		<isBoss>true</isBoss>
+		<allowInMechClusters>false</allowInMechClusters>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/Colossus</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/Colossus</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>3.5</drawSize>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponTags>
+			<li>Construct_GiantTeslaCannon</li>
+		</weaponTags>
+		<abilities>
+			<li>VR_SteamBurst</li>
+		</abilities>
+	</PawnKindDef>
+
+	<!-- Melee Colossus -->
+	<ThingDef ParentName="VR_ConstructColossus">
+		<defName>VR_Construct_Colossus_Melee</defName>
+		<label>colossus (melee)</label>
+		<description>An ultra-heavy construct equipped with a colossal axe. Made for breaking lines of enemies, it can cause widespread panic as it can level a building in a single swipe.</description>
+		<comps>
+			<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core" Class="VEF.AnimalBehaviours.CompProperties_Draftable">
+				<makeNonFleeingToo>true</makeNonFleeingToo>
+			</li>
+			<li MayRequire="OskarPotocki.VanillaFactionsExpanded.Core" Class="MVCF.Comps.CompProperties_VerbProps">
+				<compClass>MVCF.Comps.Comp_VerbProps</compClass>
+				<verbProps>
+					<li>
+						<label>colossus smash</label>
+						<description>Deliver a devastating ground smash that heavily damages walls and structures.</description>
+						<canBeToggled>true</canBeToggled>
+						<separateToggle>false</separateToggle>
+						<comps>
+							<li Class="MVCF.VerbComps.VerbCompProperties_Cooldown">
+								<compClass>MVCF.VerbComps.VerbComp_Cooldown</compClass>
+								<cooldownTime>45</cooldownTime>
+							</li>
+						</comps>
+					</li>
+				</verbProps>
+			</li>
+		</comps>
+		<verbs MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>VR_ColossusSmashProj</defaultProjectile>
+				<forcedMissRadius>1</forcedMissRadius>
+				<warmupTime>4</warmupTime>
+				<minRange>1</minRange>
+				<burstShotCount>1</burstShotCount>
+				<aimingTargetMote>VR_ColossusSmashTarget</aimingTargetMote>
+				<ai_RangedAlawaysShootGroundBelowTarget>true</ai_RangedAlawaysShootGroundBelowTarget>
+				<ai_ProjectileLaunchingIgnoresMeleeThreats>true</ai_ProjectileLaunchingIgnoresMeleeThreats>
+				<ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+				<targetParams>
+					<canTargetLocations>true</canTargetLocations>
+					<canTargetPawns>false</canTargetPawns>
+				</targetParams>
+				<range>5</range>
+				<muzzleFlashScale>0</muzzleFlashScale>
+				<label>colossus smash</label>
+				<commandIcon>Things/Item/Equipment/WeaponMelee/ColossusAxe</commandIcon>
+				<commonality>0.35</commonality>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VR_ConstructColossusKind">
+		<defName>VR_Construct_Colossus_Melee</defName>
+		<label>colossus (melee)</label>
+		<race>VR_Construct_Colossus_Melee</race>
+		<combatPower>500</combatPower>
+		<maxPerGroup>3</maxPerGroup>
+		<isBoss>false</isBoss>
+		<allowInMechClusters>false</allowInMechClusters>
+		<isGoodBreacher>true</isGoodBreacher>
+		<weaponTags Inherit="False">
+			<li>VR_Construct_ColossusAxe</li>
+		</weaponTags>
+	</PawnKindDef>
+	
+	<!-- Warqueen -->
+	<ThingDef Name="VR_ConstructQueen" ParentName="VR_SuperHeavyConstruct">
+		<defName>VR_Construct_ScarabQueen</defName>
+		<label>scarab queen</label>
+		<description>An ultra-heavy construct with a built-in manufactoria. Fed with appropriate resources, the scarab queen can form small scarab combat mechs within its massive carapace and deploy them into combat. While relying mostly swarming enemies with it's scarabs, it can emit a charge of electrical energy from its chest.</description>
+		<statBases>
+			<MoveSpeed>1.6</MoveSpeed>
+			<EnergyShieldRechargeRate>0.5</EnergyShieldRechargeRate>
+			<EnergyShieldEnergyMax>3</EnergyShieldEnergyMax>
+			<MeleeDoorDamageFactor>1.5</MeleeDoorDamageFactor>
+			<EMPResistance>0.7</EMPResistance>
+		</statBases>
+		<race>
+			<body>VR_Construct_Queen</body>
+			<baseBodySize>4</baseBodySize>
+			<baseHealthScale>5.2</baseHealthScale>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_Warqueen_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_Warqueen_Death</soundDeath>
+					<soundCall>Pawn_Mech_Warqueen_Call</soundCall>
+				</li>
+			</lifeStageAges>
+			<dutyBoss>Warqueen</dutyBoss>
+			<detritusLeavings>
+				<li>
+					<def>VR_ChunkConstructSlag</def>
+					<texOverrideIndex>13</texOverrideIndex>
+					<spawnChance>0.75</spawnChance>
+				</li>
+				<li>
+					<def>VR_ChunkConstructSlag</def>
+					<texOverrideIndex>3</texOverrideIndex>
+					<spawnChance>0.75</spawnChance>
+				</li>
+				<li>
+					<def>VR_ChunkConstructSlag</def>
+					<texOverrideIndex>0</texOverrideIndex>
+					<spawnChance>0.75</spawnChance>
+				</li>
+			</detritusLeavings>
+		</race>
+		<tools>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>4</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<accuracyTouch>0.60</accuracyTouch>
+				<accuracyShort>0.80</accuracyShort>
+				<accuracyMedium>0.90</accuracyMedium>
+				<accuracyLong>1.05</accuracyLong>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>VR_Bullet_TeslaChestProjectile</defaultProjectile>
+				<warmupTime>4.5</warmupTime>
+				<burstShotCount>1</burstShotCount>
+				<range>29.9</range>
+				<soundCast>Shot_NeedleGun</soundCast>
+				<muzzleFlashScale>0</muzzleFlashScale>
+				<label>tesla charge</label>
+				<commonality>10</commonality>
+			</li>
+		</verbs>
+		<comps>
+			<li Class="MVCF.Comps.CompProperties_VerbProps">
+				<compClass>MVCF.Comps.Comp_VerbProps</compClass>
+				<verbProps>
+					<li>
+						<label>tesla charge</label>
+						<description>Unleashes a surge electrical energy from its chest.</description>
+						<canBeToggled>false</canBeToggled>
+						<separateToggle>false</separateToggle>
+						<comps>
+							<li Class="MVCF.VerbComps.VerbCompProperties_Cooldown">
+								<compClass>MVCF.VerbComps.VerbComp_Cooldown</compClass>
+								<cooldownTime>2.1</cooldownTime>
+							</li>
+						</comps>
+					</li>
+				</verbProps>
+			</li>
+			<li Class="CompProperties_MechCarrier">
+				<spawnPawnKind>VR_Construct_Scarab</spawnPawnKind>
+				<fixedIngredient>Steel</fixedIngredient>
+				<costPerPawn>24</costPerPawn>
+				<startingIngredientCount>600</startingIngredientCount>
+				<maxIngredientCount>600</maxIngredientCount>
+				<maxPawnsToSpawn>5</maxPawnsToSpawn>
+				<spawnEffecter>WarqueenWarUrchinsSpawned</spawnEffecter>
+				<spawnedMechEffecter>WarUrchinSpawned</spawnedMechEffecter>
+				<attachSpawnedEffecter>true</attachSpawnedEffecter>
+				<attachSpawnedMechEffecter>true</attachSpawnedMechEffecter>
+			</li>
+		</comps>
+		<killedLeavingsPlayerHostile>
+			<VR_PowerchipStandard>1</VR_PowerchipStandard>
+		</killedLeavingsPlayerHostile>
+	</ThingDef>
+
+	<PawnKindDef Name="VR_ConstructQueenKind" ParentName="VR_HeavyConstructKind">
+		<defName>VR_Construct_ScarabQueen</defName>
+		<label>scarab queen</label>
+		<labelPlural>scarab queens</labelPlural>
+		<race>VR_Construct_ScarabQueen</race>
+		<combatPower>600</combatPower>
+		<maxPerGroup>3</maxPerGroup>
+		<isBoss>true</isBoss>
+		<allowInMechClusters>false</allowInMechClusters>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/ConstructQueen</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/ConstructQueen</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>3</drawSize>
+					<shadowData>
+						<volume>(0.7, 0.8, 0.7)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<controlGroupPortraitZoom>0.7</controlGroupPortraitZoom>
+	</PawnKindDef>
+
+</Defs>

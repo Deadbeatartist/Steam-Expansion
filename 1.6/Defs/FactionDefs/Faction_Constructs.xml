@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+	<FactionDef ParentName="FactionBase">
+		<defName>VR_Construct</defName>
+		<label>construct swarm</label><!-- Probably need something better -->
+		<description>Killer machines of unknown origin. Hidden in ancient structures, under mounds of dust, or at the bottom of the ocean, mechanoids can self-maintain for thousands of years. This group of mechs seems to be unified in purpose, but not well-coordinated in action. While local scholars believe they're autonomous weapons left over from an ancient war, tribal legends describe them as the demonic servants of a sleeping god.</description> <!-- Needs changing -->
+		<pawnSingular>construct</pawnSingular>
+		<pawnsPlural>constructs</pawnsPlural>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<factionNameMaker>VR_NamerFactionConstruct</factionNameMaker>
+		<factionIconPath>World/WorldObjects/Expanding/Mechanoids</factionIconPath>
+		<canStageAttacks>true</canStageAttacks>
+		<colorSpectrum>
+			<li>(0.6, 0.1, 0.1)</li>
+		</colorSpectrum>
+		<raidCommonalityFromPointsCurve>
+			<points>
+				<li>(300,  0)</li>
+				<li>(700,  1)</li>
+				<li>(1400, 1.8)</li>
+				<li>(2800, 2.2)</li>
+				<li>(4000, 2.6)</li>
+			</points>
+		</raidCommonalityFromPointsCurve>
+		<raidLootMaker>VR_ConstructRaidLootMaker</raidLootMaker>
+		<raidLootValueFromPointsCurve>
+			<points>
+				<li>(35,     8)</li>
+				<li>(100,   60)</li>
+				<li>(1000, 250)</li>
+				<li>(2000, 400)</li>
+				<li>(4000, 500)</li>
+			</points>
+		</raidLootValueFromPointsCurve>
+		<humanlikeFaction>false</humanlikeFaction>
+		<hidden>true</hidden>
+		<autoFlee>false</autoFlee>
+		<canUseAvoidGrid>false</canUseAvoidGrid>
+		<techLevel>Medieval</techLevel>
+		<earliestRaidDays>60</earliestRaidDays>
+		<permanentEnemy>true</permanentEnemy>
+		<hostileToFactionlessHumanlikes>true</hostileToFactionlessHumanlikes>
+		<maxPawnCostPerTotalPointsCurve>
+			<points>
+				<li>(400,200)</li>
+				<li>(900,300)</li>
+				<li>(100000,10000)</li>
+			</points>
+		</maxPawnCostPerTotalPointsCurve>
+		<pawnGroupMakers>
+			<li>
+				<!-- All types-->
+				<kindDef>Combat</kindDef>
+				<commonality>100</commonality>
+				<options>
+					<VR_Construct_Sphere_Melee>10</VR_Construct_Sphere_Melee>
+					<VR_Construct_Ballistae>10</VR_Construct_Ballistae>
+					<VR_Construct_Sphere_Range>10</VR_Construct_Sphere_Range>
+					<VR_Construct_Centurion_Burner>10</VR_Construct_Centurion_Burner>
+					<VR_Construct_Militor>15</VR_Construct_Militor>
+					<VR_Construct_Militor_Melee>5</VR_Construct_Militor_Melee>
+					<!-- <Mech_Centurion MayRequire="Ludeon.RimWorld.Biotech">2</Mech_Centurion> -->
+					<VR_Construct_Centurion>2</VR_Construct_Centurion>
+					<VR_Construct_ScarabQueen>1</VR_Construct_ScarabQueen>
+					<VR_Construct_Apocriton>1</VR_Construct_Apocriton>
+					<VR_Construct_Colossus_Melee>1</VR_Construct_Colossus_Melee>
+				</options>
+			</li>
+			<li>
+				<!-- Ranged only -->
+				<kindDef>Combat</kindDef>
+				<commonality>80</commonality>
+				<options>
+					<VR_Construct_Ballistae>10</VR_Construct_Ballistae>
+					<VR_Construct_Sphere_Range>10</VR_Construct_Sphere_Range>
+					<VR_Construct_Scorcher>5</VR_Construct_Scorcher>
+					<VR_Construct_Tesseron>5</VR_Construct_Tesseron>
+					<VR_Construct_Centurion_Shooter>3</VR_Construct_Centurion_Shooter>
+					<VR_Construct_Centurion_Burner>2</VR_Construct_Centurion_Burner>
+					<VR_Construct_Colossus>1</VR_Construct_Colossus>
+				</options>
+			</li>
+			<li>
+				<!-- Melee only-->
+				<kindDef>Combat</kindDef>
+				<commonality>70</commonality>
+				<options>
+					<VR_Construct_Sphere_Melee>10</VR_Construct_Sphere_Melee>
+					<VR_Construct_Militor_Melee>5</VR_Construct_Militor_Melee>
+					<VR_Construct_Centurion>1</VR_Construct_Centurion>
+				</options>
+			</li>
+			<li>
+				<!-- Centipede only -->
+				<kindDef>Combat</kindDef>
+				<commonality>30</commonality>
+				<options>
+					<VR_Construct_Centurion>10</VR_Construct_Centurion>
+					<VR_Construct_Centurion_Shooter>5</VR_Construct_Centurion_Shooter>
+					<VR_Construct_Centurion_Burner>5</VR_Construct_Centurion_Burner>
+				</options>
+			</li>
+			<li>
+				<!-- militor only -->
+				<kindDef>Combat</kindDef>
+				<commonality>30</commonality>
+				<options>
+					<VR_Construct_Militor>20</VR_Construct_Militor>
+					<VR_Construct_Militor_Melee>5</VR_Construct_Militor_Melee>
+				</options>
+			</li>
+			<li>
+				<!-- breach raids -->
+				<kindDef>Combat</kindDef>
+				<commonality>1</commonality>
+				<options>
+					<VR_Construct_Ballistae>10</VR_Construct_Ballistae>
+					<VR_Construct_Sphere_Melee>10</VR_Construct_Sphere_Melee>
+					<VR_Construct_Sphere_Range>10</VR_Construct_Sphere_Range>
+					<VR_Construct_Centurion>5</VR_Construct_Centurion>
+					<VR_Construct_Centurion_Burner>10</VR_Construct_Centurion_Burner>
+					<VR_Construct_Colossus_Melee>1</VR_Construct_Colossus_Melee>
+					<VR_Construct_Delver>1</VR_Construct_Delver>
+					<VR_Construct_Militor>20</VR_Construct_Militor>
+				</options>
+			</li>
+		</pawnGroupMakers>
+		<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+		<allowedArrivalTemperatureRange>-100~200</allowedArrivalTemperatureRange>
+		<maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+		<configurationListOrderPriority>900</configurationListOrderPriority>
+	</FactionDef>
+	
+	<ThingSetMakerDef>
+		<defName>VR_ConstructRaidLootMaker</defName>
+		<root Class="ThingSetMaker_MarketValue">
+			<fixedParams>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+			</fixedParams>
+		</root>
+	</ThingSetMakerDef>
+
+</Defs>

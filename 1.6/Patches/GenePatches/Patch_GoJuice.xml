@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<Operation Class="FantasyBiotech.PatchOperation_ToggleSettings">
+		<settings>
+			<li>medievalGoJuice</li>
+		</settings>
+		<active Class="PatchOperationSequence">
+			<operations>
+
+				<!-- Go Juice Production -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="GoJuiceProduction"]/techLevel</xpath>
+					<value>
+						<techLevel>Medieval</techLevel>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="GoJuiceProduction"]/prerequisites/li</xpath>
+					<value>
+						<li>PsychiteRefining</li>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="GoJuiceProduction"]/researchViewX</xpath>
+					<value>
+						<researchViewX>4.00</researchViewX>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="GoJuiceProduction"]/researchViewY</xpath>
+					<value>
+						<researchViewY>1.60</researchViewY>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="GoJuiceProduction"]/label</xpath>
+					<value>
+						<label>go-juice brewing</label>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="GoJuiceProduction"]/description</xpath>
+					<value>
+						<description>Produce go-juice potion, a combat-performance-enhancing drug which improves shooting, melee, and movement ability, and dulls pain.</description>
+					</value>
+				</li>
+
+				<!-- ThingDef GoJuice -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="GoJuice"]/label</xpath>
+					<value>
+						<label>go-juice potion</label>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="GoJuice"]/description</xpath>
+					<value>
+						<description>A performance-enhancing drug developed for berserkers. Go-juice blocks pain, increases movement speed, and improves the user's melee and shooting abilities.\n\nThe military chemists who created it were never able to remove its addictiveness. Some saw this as a downside; others saw it as a benefit.</description>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="GoJuice"]/graphicData/texPath</xpath>
+					<value>
+						<texPath>Things/Item/Drug/FantasyGoJuice</texPath>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="GoJuice"]/techLevel</xpath>
+					<value>
+						<techLevel>Medieval</techLevel>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="GoJuice"]/recipeMaker/recipeUsers</xpath>
+					<value>
+						<li>FueledStove</li>
+						<li MayRequire="dankpyon.medieval.overhaul">DankPyon_AlchemyBench</li>
+					</value>
+				</li>
+
+				<!-- Psychite Production -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="PsychiteRefining"]/techLevel</xpath>
+					<value>
+						<techLevel>Medieval</techLevel>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="PsychiteRefining"]/prerequisites/li</xpath>
+					<value>
+						<li>PsychoidBrewing</li>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="PsychiteRefining"]/researchViewX</xpath>
+					<value>
+						<researchViewX>3.00</researchViewX>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="PsychiteRefining"]/researchViewY</xpath>
+					<value>
+						<researchViewY>1.60</researchViewY>
+					</value>
+				</li>
+
+				<!-- ThingDef GoJuice -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Flake" or defName="Yayo"]/techLevel</xpath>
+					<value>
+						<techLevel>Medieval</techLevel>
+					</value>
+				</li>
+
+				<li Class="PatchOperationAdd">
+					<xpath>Defs/ThingDef[defName="Flake" or defName="Yayo"]/recipeMaker/recipeUsers</xpath>
+					<value>
+						<li>FueledStove</li>
+						<li MayRequire="dankpyon.medieval.overhaul">DankPyon_AlchemyBench</li>
+					</value>
+				</li>
+
+				<!-- Move Around -->
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="WakeUpProduction"]/researchViewX</xpath>
+					<value>
+						<researchViewX>3.00</researchViewX>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="WakeUpProduction"]/researchViewY</xpath>
+					<value>
+						<researchViewY>0.30</researchViewY>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="PenoxycylineProduction"]/researchViewX</xpath>
+					<value>
+						<researchViewX>3.00</researchViewX>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ResearchProjectDef[defName="PenoxycylineProduction"]/researchViewY</xpath>
+					<value>
+						<researchViewY>0.90</researchViewY>
+					</value>
+				</li>
+
+				<li Class="PatchOperationReplace">
+					<xpath>Defs/ThingDef[defName="Neutroamine"]/graphicData/texPath</xpath>
+					<value>
+						<texPath>Things/Item/Resource/FantasyNeutro</texPath>
+					</value>
+				</li>
+
+
+			</operations>
+		</active>
+	</Operation>
+
+</Patch>

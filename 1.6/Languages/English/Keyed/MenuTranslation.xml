@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <!-- Titles -->
+    <FantasyBiotech.ModNameShort>Fantasy Biotech</FantasyBiotech.ModNameShort>
+    <FantasyBiotech_Settings_Options>Settings</FantasyBiotech_Settings_Options>
+    <FantasyBiotech_Settings_HeaderConstructs>Constructs</FantasyBiotech_Settings_HeaderConstructs>
+    <FantasyBiotech_Settings_HeaderGenetics>Genetics</FantasyBiotech_Settings_HeaderGenetics>
+    <FantasyBiotech_Settings_HeaderVampires>Vampires</FantasyBiotech_Settings_HeaderVampires>
+	<FantasyBiotech_Settings_HeaderMisc>Misc</FantasyBiotech_Settings_HeaderMisc>
+
+    <!-- Options -->
+    <!-- Mech Options -->
+    <FantasyBiotech_Settings_Mech_Replace_Title>Replace Mechs</FantasyBiotech_Settings_Mech_Replace_Title>
+    <FantasyBiotech_Settings_Mech_Replace_Desc>Replaces vanilla mechs with artifice constructs in various game events. Advised to leave on if you want full experience of the mod.</FantasyBiotech_Settings_Mech_Replace_Desc>
+
+    <!-- Genetic Options -->
+	<FantasyBiotech_Settings_MedievalGrowthVat_Replace_Title>Medieval Growth Vat</FantasyBiotech_Settings_MedievalGrowthVat_Replace_Title>
+    <FantasyBiotech_Settings_MedievalGrowthVat_Replace_Desc>Modifies Growth Vat and Fertility Prodecures to be a medieval.</FantasyBiotech_Settings_MedievalGrowthVat_Replace_Desc>
+	
+    <FantasyBiotech_Settings_MedievalGoJuice_Replace_Title>Medieval Go-Juice</FantasyBiotech_Settings_MedievalGoJuice_Replace_Title>
+    <FantasyBiotech_Settings_MedievalGoJuice_Replace_Desc>Modifies Go-Juice to be a medieval and to be made at the Fueled Stove. Will override WTL default settings to make Hussar's medieval.</FantasyBiotech_Settings_MedievalGoJuice_Replace_Desc>
+
+    <!-- Sanguophage Options -->
+    <FantasyBiotech_Settings_BasicDeathrestCasket_Replace_Title>Basic Deathrest Casket</FantasyBiotech_Settings_BasicDeathrestCasket_Replace_Title>
+    <FantasyBiotech_Settings_BasicDeathrestCasket_Replace_Desc>Enables a basic casket for deathrest</FantasyBiotech_Settings_BasicDeathrestCasket_Replace_Desc>
+
+    <FantasyBiotech_Settings_RenameSanguophage_Replace_Title>Rename Sanguophage</FantasyBiotech_Settings_RenameSanguophage_Replace_Title>
+    <FantasyBiotech_Settings_RenameSanguophage_Replace_Desc>Renames everything sanguophages to be more fantasy vampire related</FantasyBiotech_Settings_RenameSanguophage_Replace_Desc>
+
+    <FantasyBiotech_Settings_MedievalVampireScenario_Replace_Title>Make Sanguophage scenario medieval</FantasyBiotech_Settings_MedievalVampireScenario_Replace_Title>
+    <FantasyBiotech_Settings_MedievalVampireScenario_Replace_Desc>Makes the vanilla sanguophage scenario medieval</FantasyBiotech_Settings_MedievalVampireScenario_Replace_Desc>
+
+    <FantasyBiotech_Settings_MedievalSanguophageFaction_Replace_Title>Make Sanguophage Faction Medieval</FantasyBiotech_Settings_MedievalSanguophageFaction_Replace_Title>
+    <FantasyBiotech_Settings_MedievalSanguophageFaction_Replace_Desc>Makes the Sanguophage Faction Medieval</FantasyBiotech_Settings_MedievalSanguophageFaction_Replace_Desc>
+	
+	<!-- Sanguophage Options -->
+    <FantasyBiotech_Settings_TradeShip_Replace_Title>Reword Trade Ship Incident</FantasyBiotech_Settings_TradeShip_Replace_Title>
+    <FantasyBiotech_Settings_TradeShip_Replace_Desc>Makes the trade ship incident more fantasy and inline with new trade beacon</FantasyBiotech_Settings_TradeShip_Replace_Desc>
+	
+	<FantasyBiotech_Settings_MedievalHemogenTexture_Replace_Title>Retexture Hemogen Packs</FantasyBiotech_Settings_MedievalHemogenTexture_Replace_Title>
+    <FantasyBiotech_Settings_MedievalHemogenTexture_Replace_Desc>Changes hemogen packs to have a vial texture</FantasyBiotech_Settings_MedievalHemogenTexture_Replace_Desc>
+	
+	
+
+    <!-- Reset to Default -->
+    <FantasyBiotech_ResetDefault>Reset to Default</FantasyBiotech_ResetDefault>
+
+
+</LanguageData>

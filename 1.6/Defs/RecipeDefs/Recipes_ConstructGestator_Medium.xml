@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<RecipeDef Name="VR_MediumConstructRecipe" ParentName="VR_BaseConstructRecipe" Abstract="True">
+		<gestationCycles>2</gestationCycles>
+		<researchPrerequisite>VR_StandardConstructTech</researchPrerequisite>
+	</RecipeDef>
+
+	<RecipeDef Name="VR_Construct_Sphere_Melee_RecipeBase" ParentName="VR_MediumConstructRecipe" Abstract="True">
+		<description>Gestate a melee sphere construct.</description>
+		<ingredients Inherit="False">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>75</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>75</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Uranium</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>VR_TonalCoreRegular</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+	</RecipeDef>
+
+	<RecipeDef ParentName="VR_Construct_Sphere_Melee_RecipeBase">
+		<defName>VR_Construct_Sphere_Melee_Sword</defName>
+		<label>gestate sphere (sword)</label>
+		<products>
+			<VR_Construct_Sphere_Melee_Sword>1</VR_Construct_Sphere_Melee_Sword>
+		</products>
+		<descriptionHyperlinks>
+			<ThingDef>VR_Construct_Sphere_Melee_Sword</ThingDef>
+		</descriptionHyperlinks>
+	</RecipeDef>
+
+	<RecipeDef ParentName="VR_Construct_Sphere_Melee_RecipeBase">
+		<defName>VR_Construct_Sphere_Melee_Hammer</defName>
+		<label>gestate sphere (hammer)</label>
+		<products>
+			<VR_Construct_Sphere_Melee_Hammer>1</VR_Construct_Sphere_Melee_Hammer>
+		</products>
+		<descriptionHyperlinks>
+			<ThingDef>VR_Construct_Sphere_Melee_Hammer</ThingDef>
+		</descriptionHyperlinks>
+	</RecipeDef>
+	<RecipeDef ParentName="VR_Construct_Sphere_Melee_RecipeBase">
+		<defName>VR_Construct_Sphere_Melee_Lance</defName>
+		<label>gestate sphere (lance)</label>
+		<products>
+			<VR_Construct_Sphere_Melee_Lance>1</VR_Construct_Sphere_Melee_Lance>
+		</products>
+		<descriptionHyperlinks>
+			<ThingDef>VR_Construct_Sphere_Melee_Lance</ThingDef>
+		</descriptionHyperlinks>
+	</RecipeDef>
+
+	<RecipeDef ParentName="VR_MediumConstructRecipe">
+		<defName>VR_Construct_Sphere_Range</defName>
+		<label>gestate sphere (ranged)</label>
+		<description>Gestate a ranged sphere construct.</description>
+		<ingredients Inherit="False">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>75</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>75</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Uranium</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>VR_TonalCoreRegular</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<VR_Construct_Sphere_Range>1</VR_Construct_Sphere_Range>
+		</products>
+		<descriptionHyperlinks>
+			<ThingDef>VR_Construct_Sphere_Range</ThingDef>
+		</descriptionHyperlinks>
+	</RecipeDef>
+
+	<RecipeDef ParentName="VR_MediumConstructRecipe">
+		<defName>VR_Construct_Ballistae</defName>
+		<label>gestate ballistae</label>
+		<description>Gestate a ballistae construct.</description>
+		<ingredients Inherit="False">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>100</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>40</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>VR_TonalCoreRegular</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<VR_Construct_Ballistae>1</VR_Construct_Ballistae>
+		</products>
+		<descriptionHyperlinks>
+			<ThingDef>VR_Construct_Ballistae</ThingDef>
+		</descriptionHyperlinks>
+	</RecipeDef>
+
+	<RecipeDef ParentName="VR_MediumConstructRecipe">
+		<defName>VR_Construct_Scorcher</defName>
+		<label>gestate sphere (scorcher)</label>
+		<description>Gestate a sphere (scorcher) construct.</description>
+		<ingredients Inherit="False">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>75</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>75</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Uranium</li>
+					</thingDefs>
+				</filter>
+				<count>20</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>VR_TonalCoreRegular</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<VR_Construct_Scorcher>1</VR_Construct_Scorcher>
+		</products>
+		<descriptionHyperlinks>
+			<ThingDef>VR_Construct_Scorcher</ThingDef>
+		</descriptionHyperlinks>
+	</RecipeDef>
+
+	<RecipeDef ParentName="VR_MediumConstructRecipe">
+		<defName>VR_Construct_Tesseron</defName>
+		<label>gestate sphere (tesla)</label>
+		<description>Gestate a sphere (tesla) construct.</description>
+		<ingredients Inherit="False">
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>80</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Plasteel</li>
+					</thingDefs>
+				</filter>
+				<count>80</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Uranium</li>
+					</thingDefs>
+				</filter>
+				<count>40</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>VR_TonalCoreHigh</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<products>
+			<VR_Construct_Tesseron>1</VR_Construct_Tesseron>
+		</products>
+		<descriptionHyperlinks>
+			<ThingDef>VR_Construct_Tesseron</ThingDef>
+		</descriptionHyperlinks>
+	</RecipeDef>
+	
+</Defs>

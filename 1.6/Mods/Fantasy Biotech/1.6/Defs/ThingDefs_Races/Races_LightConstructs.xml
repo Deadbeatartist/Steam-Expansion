@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Militor -->
+	<ThingDef ParentName="VR_LightSphereConstruct">
+		<defName>VR_Construct_Militor</defName>
+		<label>vanguard (shooter)</label>
+		<description>A small combat construct armed with a handgonne. Roughly four feet tall, vanguards lack the power, range, and toughness of more senior combat constructs. However, it is cheap to gestate and maintain, and so is often used as a rear guard or swarm attacker.\n\nIn war, constructs armies are known to send vanguards into town ruins to hunt down survivors after breaking the human defenses. For this reason, they are considered by some to be the most cruel of all construct patterns.</description>
+		<statBases>
+			<MoveSpeed>3.8</MoveSpeed>
+		</statBases>
+		<race>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+					<soundCall>Pawn_Mech_Militor_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VR_LightConstructKind">
+		<defName>VR_Construct_Militor</defName>
+		<label>vanguard</label>
+		<race>VR_Construct_Militor</race>
+		<combatPower>45</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/ConstructMilitor</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/ConstructMilitor</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.25</drawSize>
+					<shadowData>
+						<volume>(0.3, 0.4, 0.3)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponTags>
+			<li>ConstructGunShortRange</li>
+		</weaponTags>
+	</PawnKindDef>
+
+	<ThingDef ParentName="VR_LightSphereConstruct">
+		<defName>VR_Construct_Militor_Melee</defName>
+		<label>vanguard (melee)</label>
+		<description>A small combat construct armed with a baton. Roughly four feet tall, vanguards lack the power, range, and toughness of more senior combat constructs. However, it is cheap to gestate and maintain, and so is often used as a rear guard or swarm attacker.\n\nIn war, constructs armies are known to send vanguards into town ruins to hunt down survivors after breaking the human defenses. For this reason, they are considered by some to be the most cruel of all construct patterns.</description>
+		<statBases>
+			<MoveSpeed>3.8</MoveSpeed>
+		</statBases>
+		<race>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_Militor_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_Militor_Death</soundDeath>
+					<soundCall>Pawn_Mech_Militor_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VR_LightConstructKind">
+		<defName>VR_Construct_Militor_Melee</defName>
+		<label>vanguard (melee)</label>
+		<race>VR_Construct_Militor_Melee</race>
+		<combatPower>45</combatPower>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/ConstructMilitor</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/ConstructMilitor</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.25</drawSize>
+					<shadowData>
+						<volume>(0.3, 0.4, 0.3)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<weaponTags>
+			<li>VR_Construct_SteamBaton</li>
+		</weaponTags>
+	</PawnKindDef>
+
+	<!-- Lifter -->
+	<ThingDef ParentName="VR_LightConstruct">
+		<defName>VR_Construct_Lifter</defName>
+		<label>transport spider</label>
+		<description>A small construct designed for hauling. Lacking a ranged weapon, it can make only weak melee attacks.</description>
+		<statBases>
+			<MoveSpeed>2.8</MoveSpeed>
+		</statBases>
+		<race>
+			<mechEnabledWorkTypes>
+				<li>Hauling</li>
+				<li>Cleaning</li>
+			</mechEnabledWorkTypes>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_Lifter_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_Lifter_Death</soundDeath>
+					<soundCall>Pawn_Mech_Lifter_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VR_NonCombatLightConstructKind">
+		<defName>VR_Construct_Lifter</defName>
+		<label>transport spider</label>
+		<race>VR_Construct_Lifter</race>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/ConstructSpider</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/ConstructSpider</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.1</drawSize>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+	<!-- Constructoid -->
+	<ThingDef ParentName="VR_LightConstruct">
+		<defName>VR_Construct_Constructoid</defName>
+		<label>construction spider</label>
+		<description>A small construct designed to perform construction tasks. It can perform blunt melee attacks if necessary.</description>
+		<statBases>
+			<ConstructionSpeed>0.5</ConstructionSpeed>
+		</statBases>
+		<race>
+			<mechEnabledWorkTypes>
+				<li>Construction</li>
+				<li>Mining</li>
+			</mechEnabledWorkTypes>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_Constructoid_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_Constructoid_Death</soundDeath>
+					<soundCall>Pawn_Mech_Constructoid_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+		<tools>
+			<li>
+				<label>torso</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>10</power>
+				<cooldownTime>2.9</cooldownTime>
+				<linkedBodyPartsGroup>Torso</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+			</li>
+		</tools>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VR_NonCombatLightConstructKind">
+		<defName>VR_Construct_Constructoid</defName>
+		<label>construct spider</label>
+		<race>VR_Construct_Constructoid</race>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/ConstructSpider_Constructoid</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/ConstructSpider_Constructoid</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.1</drawSize>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+	<!-- Agrihand -->
+	<ThingDef ParentName="VR_LightConstruct">
+		<defName>VR_Construct_Agrihand</defName>
+		<label>farmhand spider</label>
+		<description>A small construct designed to sow and harvest crops, along with milking and shearing animals. While it is better suited to labor than combat, it can fight with built-in cutting blades if necessary.</description>
+		<tools>
+			<li>
+				<label>right blade</label>
+				<labelNoLocation>blade</labelNoLocation>
+				<capacities>
+					<li>Cut</li>
+					<li>Stab</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>RightBlade</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+		</tools>
+		<statBases>
+			<PlantWorkSpeed>0.80</PlantWorkSpeed>
+		</statBases>
+		<race>
+			<body>Mech_Agrihand</body>
+			<thinkTreeMain>Mechanoid</thinkTreeMain>
+			<mechEnabledWorkTypes>
+				<li>VR_ConstructHandling</li>
+				<li>PlantCutting</li>
+				<li>Growing</li>
+			</mechEnabledWorkTypes>
+			<mechWorkTypePriorities>
+				<PlantCutting>2</PlantCutting>
+				<VR_ConstructHandling>3</VR_ConstructHandling>
+			</mechWorkTypePriorities>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_Agrihand_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_Agrihand_Death</soundDeath>
+					<soundCall>Pawn_Mech_Agrihand_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+		<modExtensions>
+			<li Class="FantasyBiotech.WorkGiverExtension">
+				<workGivers>
+					<li>VR_ConstructMilk</li>
+					<li>VR_ConstructShear</li>
+				</workGivers>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VR_NonCombatLightConstructKind">
+		<defName>VR_Construct_Agrihand</defName>
+		<label>farmhand spider</label>
+		<race>VR_Construct_Agrihand</race>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/ConstructSpider_Agrihand</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/ConstructSpider_Agrihand</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.1</drawSize>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+
+	<!-- WarUrchin -->
+	<ThingDef ParentName="VR_LightConstruct">
+		<defName>VR_Construct_Scarab</defName>
+		<label>scarab</label>
+		<description>A small, deployable combat construct that are usually deployed from a Scarab Queen. Scarabs are expendable fighters designed to swarm-attack enemies.</description>
+		<statBases>
+			<MoveSpeed>3</MoveSpeed>
+		</statBases>
+		<tools>
+			<li>
+				<label>pincers</label>
+				<capacities>
+					<li>Cut</li>
+					<li>Stab</li>
+				</capacities>
+				<power>12</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+			</li>
+		</tools>
+		<race>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_WarUrchin_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_WarUrchin_Death</soundDeath>
+					<soundCall>Pawn_Mech_WarUrchin_Call</soundCall>
+				</li>
+			</lifeStageAges>
+			<thinkTreeConstant>VR_ScarabConstant</thinkTreeConstant>
+			<baseHealthScale>1.3</baseHealthScale>
+		</race>
+		<comps Inherit="False">
+			<li Class="CompProperties_CanBeDormant"/>
+			<li Class="CompProperties_WakeUpDormant">
+				<wakeUpOnDamage>true</wakeUpOnDamage>
+				<wakeUpCheckRadius>30</wakeUpCheckRadius>
+				<wakeUpSound>MechanoidsWakeUp</wakeUpSound>
+			</li>
+			<li Class="CompProperties_MechPowerCell">
+				<totalPowerTicks>15000</totalPowerTicks>
+			</li>
+		</comps>
+	</ThingDef>
+   
+	<PawnKindDef ParentName="VR_LightConstructKind">
+		<defName>VR_Construct_Scarab</defName>
+		<label>scarab</label>
+		<labelPlural>scarabs</labelPlural>
+		<race>VR_Construct_Scarab</race>
+		<allowInMechClusters>false</allowInMechClusters>
+		<forceNoDeathNotification>true</forceNoDeathNotification>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/ConstructScarab</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/ConstructScarab</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1.1</drawSize>
+					<shadowData>
+						<volume>(0.2, 0.3, 0.2)</volume>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<abilities>
+			<li>VR_LongjumpConstruct</li>
+		</abilities>
+	</PawnKindDef>
+	
+	<!-- Fabricor -->
+	<ThingDef ParentName="VR_LightConstruct">
+		<defName>VR_Construct_Assembler</defName>
+		<label>assembler</label>
+		<description>A small work construct designed to craft all manner of manufactured objects.</description>
+		<statBases>
+			<FoodPoisonChance>0.001</FoodPoisonChance>
+		</statBases>
+		<race>
+			<mechEnabledWorkTypes>
+				<li>Crafting</li>
+				<li>Smithing</li>
+				<li>Tailoring</li>
+				<li>Cooking</li>
+				<li>Research</li>
+			</mechEnabledWorkTypes>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_Fabricor_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_Fabricor_Death</soundDeath>
+					<soundCall>Pawn_Mech_Fabricor_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+	</ThingDef>
+
+	<PawnKindDef ParentName="VR_NonCombatLightConstructKind">
+		<defName>VR_Construct_Assembler</defName>
+		<label>assembler</label>
+		<race>VR_Construct_Assembler</race>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/ConstructFabricor</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/ConstructFabricor</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2</drawSize>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+	</PawnKindDef>
+	
+	<!-- Paramedic -->
+	<ThingDef ParentName="VR_LightConstruct">
+		<defName>VR_Construct_Mender</defName>
+		<label>mender</label>
+		<description>A small construct designed for non-violent emergency situation management and medical care. The mender can rescue the wounded, fight fires, treat the sick, and even perform surgery when a more-qualified human is not available. Its built-in jump launcher allows it to jump into, and out of, emergency situations.</description>
+		<statBases>
+			<MoveSpeed>3.8</MoveSpeed>
+		</statBases>
+		<race>
+			<mechEnabledWorkTypes>
+				<li>Doctor</li>
+				<li>Firefighter</li>
+			</mechEnabledWorkTypes>
+			<lifeStageAges>
+				<li>
+					<def>MechanoidFullyFormed</def>
+					<minAge>0</minAge>
+					<soundWounded>Pawn_Mech_Paramedic_Wounded</soundWounded>
+					<soundDeath>Pawn_Mech_Paramedic_Death</soundDeath>
+					<soundCall>Pawn_Mech_Paramedic_Call</soundCall>
+				</li>
+			</lifeStageAges>
+		</race>
+	</ThingDef>
+  
+	<PawnKindDef ParentName="VR_LightConstructKind">
+		<defName>VR_Construct_Mender</defName>
+		<label>mender</label>
+		<race>VR_Construct_Mender</race>
+		<allowInMechClusters>false</allowInMechClusters>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Mechanoid/ConstructParamedic</texPath>
+					<maskPath>Things/Pawn/Mechanoid/AllegianceOverlays/ConstructParamedic</maskPath>
+					<shaderType>CutoutWithOverlay</shaderType>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>2</drawSize>
+					<shadowData>
+						<volume>(0.3, 0.4, 0.3)</volume>
+						<offset>(0,0,-0.25)</offset>
+					</shadowData>
+				</bodyGraphicData>
+			</li>
+		</lifeStages>
+		<abilities>
+			<li>LongjumpMechLauncher</li>
+		</abilities>
+	</PawnKindDef>
+
+</Defs>

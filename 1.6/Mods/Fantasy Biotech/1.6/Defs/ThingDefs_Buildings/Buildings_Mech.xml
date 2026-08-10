@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Mech gestators -->
+	<ThingDef Abstract="True" Name="VR_MechGestatorBase" ParentName="BuildingBase">
+		<thingClass>FantasyBiotech.Building_ConstructGestator</thingClass>
+		<containedPawnsSelectable>true</containedPawnsSelectable>
+		<tickerType>Normal</tickerType>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.5</fillPercent>
+		<hasInteractionCell>true</hasInteractionCell>
+		<castEdgeShadows>true</castEdgeShadows>
+		<pathCost>42</pathCost>
+		<surfaceType>Item</surfaceType>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<building>
+			<spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+			<canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+			<ai_chillDestination>false</ai_chillDestination>
+			<buildingTags>
+				<li>Production</li>
+				<li>Biotech</li>
+			</buildingTags>
+		</building>
+		<designationCategory>VR_Artifice</designationCategory>
+		<uiOrder>2400</uiOrder>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<placeWorkers>
+			<li>PlaceWorker_MechGestatorTop</li>
+		</placeWorkers>
+		<techLevel>Medieval</techLevel>
+	</ThingDef>
+
+	<ThingDef ParentName="VR_MechGestatorBase">
+		<defName>VR_MechGestator_Steam</defName>
+		<label>mech gestator</label>
+		<description>A tank of mechanite-rich fluid with support tubes for feeding in materials and nutrients. Mechanitors can use it to produce new mechanoids or to resurrect dead mechanoids. This basic type of mech gestator is only capable of generating light-weight mechs.\n\nThe process uses harsh chemicals which are stored in toxic wastepacks. Haulers must remove the wastepacks from time to time.</description>
+		<graphicData>
+			<texPath>Things/Building/Production/MechGestatorStandard_Steam</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(5.6,4)</drawSize>
+			<shadowData>
+				<volume>(3, 2, 1.9)</volume>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Production/MechGestatorStandard_Steam_MenuIcon</uiIconPath>
+		<uiIconScale>1.85</uiIconScale>
+		<interactionCellOffset>(1,0,2)</interactionCellOffset>
+		<recipes>
+			<li>VR_MakeConstruct_Militor</li>
+			<li>VR_MakeConstruct_Militor_Melee</li>
+			<li>VR_MakeConstruct_Lifter</li>
+			<li>VR_MakeConstruct_Constructoid</li>
+			<li>VR_MakeConstruct_Agrihand</li>
+			<li>VR_ResurrectLightConstruct</li>
+			<li>VR_MakeConstruct_Assembler</li>
+			<li>VR_MakeConstruct_Mender</li>
+		</recipes>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToBuild>8000</WorkToBuild>
+			<Mass>25</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<size>(3,2)</size>
+		<costList>
+			<Steel>150</Steel>
+		</costList>
+		<researchPrerequisites>
+			<li>VR_BasicConstructTech</li>
+		</researchPrerequisites>
+		<building>
+			<barDrawData>
+				<north>
+					<preRotationOffset>(-1.06, 0.91)</preRotationOffset>
+					<size>(0.7, 0.13)</size>
+				</north>
+				<south>
+					<preRotationOffset>(-1.06, 0.82)</preRotationOffset>
+					<size>(0.7, 0.13)</size>
+				</south>
+				<east>
+					<preRotationOffset>(1.06, -0.97)</preRotationOffset>
+					<size>(0.7, 0.13)</size>
+				</east>
+				<west>
+					<preRotationOffset>(-1.06, -0.97)</preRotationOffset>
+					<size>(0.7, 0.13)</size>
+				</west>
+			</barDrawData>
+			<formingGraphicData>
+				<texPath>Things/Pawn/Mechanoid/HalfGestatedConstructSmall</texPath>
+				<graphicClass>Graphic_Single</graphicClass>
+				<drawSize>(1,1)</drawSize>
+			</formingGraphicData>
+			<formingMechPerRotationOffset>
+				<li>(0, 0, 0.45)</li>
+				<li>(0, 0, 0.45)</li>
+				<li>(0, 0, 0.45)</li>
+				<li>(0, 0, 0.45)</li>
+			</formingMechPerRotationOffset>
+			<mechGestatorCylinderGraphic>
+				<texPath>Things/Building/Production/MechGestatorStandardGlass_Steam</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(5.6,4)</drawSize>
+				<shaderType>Transparent</shaderType>
+			</mechGestatorCylinderGraphic>
+			<mechGestatorTopGraphic>
+				<texPath>Things/Building/Production/MechGestatorStandardTop_Steam</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(5.6,4)</drawSize>
+			</mechGestatorTopGraphic>
+			<gestatorFormingMote>
+				<north>MechGestatorForming_North</north>
+				<east>MechGestatorForming_East</east>
+				<west>MechGestatorForming_East</west>
+				<south>MechGestatorForming_South</south>
+			</gestatorFormingMote>
+			<gestatorCycleCompleteMote>
+				<north>MechGestatorCycleComplete_North</north>
+				<east>MechGestatorCycleComplete_East</east>
+				<west>MechGestatorCycleComplete_East</west>
+				<south>MechGestatorCycleComplete_South</south>
+			</gestatorCycleCompleteMote>
+			<gestatorFormedMote>
+				<north>MechGestatorFormed_North</north>
+				<east>MechGestatorFormed_East</east>
+				<west>MechGestatorFormed_East</west>
+				<south>MechGestatorFormed_South</south>
+			</gestatorFormedMote>
+		</building>
+		<comps>
+			<li Class="PipeSystem.CompProperties_ResourceTrader">
+				<compClass>FantasyBiotech.CompResourceTrader_Steam</compClass>
+				<pipeNet>VR_SteamNet</pipeNet>
+				<consumptionPerTick>7</consumptionPerTick>
+				<idleConsumptionPerTick>1</idleConsumptionPerTick>
+			</li>
+			<li Class="CompProperties_Power">
+				<transmitsPower>false</transmitsPower>
+				<!-- Specify the comp class -->
+				<compClass>FantasyBiotech.CompPowerPlantNeedResource_Steam</compClass>
+				<basePowerConsumption>-1000</basePowerConsumption>
+			</li>
+		</comps>
+		<techLevel>Medieval</techLevel>
+	</ThingDef>
+
+	<ThingDef ParentName="VR_MechGestatorBase">
+		<defName>VR_LargeMechGestator_Steam</defName>
+		<label>large construct gestator</label>
+		<description>A tank of mechanite-rich fluid with support tubes for feeding in materials and nutrients. Mechanitors can use it to produce new mechanoids or to resurrect dead mechanoids. This tier of mech gestator is capable of generating medium, heavy, and ultraheavy mechs.\n\nThe process uses harsh chemicals which are stored in toxic wastepacks. Haulers must remove the wastepacks from time to time.</description>
+		<graphicData>
+			<texPath>Things/Building/Production/MechGestatorLarge_Steam</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(6, 5)</drawSize>
+			<shadowData>
+				<volume>(3.8, 3, 2.7)</volume>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>Things/Building/Production/MechGestatorLarge_Steam_MenuIcon</uiIconPath>
+		<uiIconScale>1.5</uiIconScale>
+		<interactionCellOffset>(2,0,2)</interactionCellOffset>
+		<statBases>
+			<MaxHitPoints>350</MaxHitPoints>
+			<WorkToBuild>16000</WorkToBuild>
+			<Mass>35</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<size>(4,3)</size>
+		<costList>
+			<Steel>300</Steel>
+		</costList>
+		<researchPrerequisites>
+			<li>VR_StandardConstructTech</li>
+		</researchPrerequisites>
+		<building>
+			<barDrawData>
+				<north>
+					<preRotationOffset>(-1.59, 1.4)</preRotationOffset>
+					<size>(0.72, 0.12)</size>
+				</north>
+				<south>
+					<preRotationOffset>(-1.59, 1.33)</preRotationOffset>
+					<size>(0.72, 0.12)</size>
+				</south>
+				<east>
+					<preRotationOffset>(1.59, -1.4)</preRotationOffset>
+					<size>(0.72, 0.12)</size>
+				</east>
+				<west>
+					<preRotationOffset>(-1.59, -1.4)</preRotationOffset>
+					<size>(0.72, 0.12)</size>
+				</west>
+			</barDrawData>
+			<formingGraphicData>
+				<texPath>Things/Pawn/Mechanoid/HalfGestatedConstructLarge</texPath>
+				<graphicClass>Graphic_Single</graphicClass>
+				<drawSize>(1.65,1.65)</drawSize>
+			</formingGraphicData>
+			<formingMechBobSpeed>0.0005</formingMechBobSpeed>
+			<formingMechYBobDistance>0.08</formingMechYBobDistance>
+			<formingMechPerRotationOffset>
+				<li>(0, 0, 0.225)</li>
+				<li>(-0.15, 0, 0.225)</li>
+				<li>(0, 0, 0.225)</li>
+				<li>(0.15, 0, 0.225)</li>
+			</formingMechPerRotationOffset>
+			<mechGestatorCylinderGraphic>
+				<texPath>Things/Building/Production/MechGestatorLargeGlass_Steam</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(6, 5)</drawSize>
+				<shaderType>Transparent</shaderType>
+			</mechGestatorCylinderGraphic>
+			<mechGestatorTopGraphic>
+				<texPath>Things/Building/Production/MechGestatorLargeTop_Steam</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>(6, 5)</drawSize>
+			</mechGestatorTopGraphic>
+			<gestatorFormingMote>
+				<north>VR_MechGestatorFormingLarge_North</north>
+				<east>VR_MechGestatorFormingLarge_East</east>
+				<west>VR_MechGestatorFormingLarge_West</west>
+				<south>VR_MechGestatorFormingLarge_South</south>
+			</gestatorFormingMote>
+			<gestatorCycleCompleteMote>
+				<north>MechGestatorCycleCompleteLarge_North</north>
+				<east>MechGestatorCycleCompleteLarge_East</east>
+				<west>MechGestatorCycleCompleteLarge_West</west>
+				<south>MechGestatorCycleCompleteLarge_South</south>
+			</gestatorCycleCompleteMote>
+			<gestatorFormedMote>
+				<north>MechGestatorFormedLarge_North</north>
+				<east>MechGestatorFormedLarge_East</east>
+				<west>MechGestatorFormedLarge_West</west>
+				<south>MechGestatorFormedLarge_South</south>
+			</gestatorFormedMote>
+		</building>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+		<recipes>
+			<li>VR_Construct_Sphere_Melee_Sword</li>
+			<li>VR_Construct_Sphere_Melee_Hammer</li>
+			<li>VR_Construct_Sphere_Melee_Lance</li>
+			<li>VR_Construct_Sphere_Range</li>
+			<li>VR_Construct_Ballistae</li>
+			<li>VR_Construct_Scorcher</li>
+			<li>VR_Construct_Tesseron</li>
+			<li>VR_Construct_Tunneler</li>
+			<li>VR_Construct_Centurion_Melee_Sword</li>
+			<li>VR_Construct_Centurion_Melee_Hammer</li>
+			<li>VR_Construct_Centurion_Melee_StakeDriver</li>
+			<li>VR_Construct_Centurion_Burner</li>
+			<li>VR_Construct_Centurion_Shooter</li>
+			<li>VR_Construct_Colossus_Melee</li>
+			<li>VR_Construct_Colossus</li>
+			<li>VR_Construct_ScarabQueen</li>
+			<li>VR_ResurrectMediumConstruct</li>
+			<li>VR_ResurrectHeavyConstruct</li>
+			<li>VR_ResurrectUltraheavyConstruct</li>
+		</recipes>
+		<comps>
+			<li Class="PipeSystem.CompProperties_ResourceTrader">
+				<compClass>FantasyBiotech.CompResourceTrader_Steam</compClass>
+				<pipeNet>VR_SteamNet</pipeNet>
+				<consumptionPerTick>10</consumptionPerTick>
+				<idleConsumptionPerTick>1</idleConsumptionPerTick>
+			</li>
+			<li Class="CompProperties_Power">
+				<transmitsPower>false</transmitsPower>
+				<!-- Specify the comp class -->
+				<compClass>FantasyBiotech.CompPowerPlantNeedResource_Steam</compClass>
+				<basePowerConsumption>-1000</basePowerConsumption>
+			</li>
+		</comps>
+		<techLevel>Medieval</techLevel>
+	</ThingDef>
+
+	<ThingDef ParentName="BenchBase">
+		<defName>VR_SubcoreEncoder_Steam</defName>
+		<label>soulcore encoder</label>
+		<description>A work station where an artificer can produce basic-tier soulcores and implants. Soulcores are the essence of life for constructs, and one is required to produce any construct. Basic soulcores can only be used in simple basic-tier mechs.\n\nHigher tier soulcores can be created by building a harmonic sampler or a tonal transcriber.</description>
+		<thingClass>Building_WorkTable</thingClass>
+		<canOverlapZones>false</canOverlapZones>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.3</fillPercent>
+		<graphicData>
+			<texPath>Things/Building/Production/SubcoreEncoder_Steam</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,2)</drawSize>
+			<shadowData>
+				<volume>(3, 2, 1.9)</volume>
+			</shadowData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<buildingTags>
+				<li>Biotech</li>
+			</buildingTags>
+		</building>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<designationCategory>VR_Artifice</designationCategory>
+		<uiOrder>2430</uiOrder>
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<WorkToBuild>8000</WorkToBuild>
+			<Mass>25</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<size>(3,2)</size>
+		<costList>
+			<Steel>100</Steel>
+		</costList>
+		<researchPrerequisites>
+			<li>VR_BasicConstructTech</li>
+		</researchPrerequisites>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<inspectorTabs>
+			<li>ITab_Bills</li>
+		</inspectorTabs>
+		<comps>
+			<li Class="CompProperties_MoteEmitter">
+				<perRotationMotes>
+					<li>Mote_SubcoreEncoderNorth</li>
+					<li>Mote_SubcoreEncoderEast</li>
+					<li>Mote_SubcoreEncoderSouth</li>
+					<li>Mote_SubcoreEncoderEast</li>
+				</perRotationMotes>
+				<offsetNorth>(0, 0, -0.34)</offsetNorth>
+				<offsetSouth>(0, 0, 0.66)</offsetSouth>
+				<offsetWest>(0.575, 0, 0.24)</offsetWest>
+				<offsetEast>(-0.575, 0, 0.24)</offsetEast>
+				<useParentRotation>true</useParentRotation>
+			</li>
+			<li Class="PipeSystem.CompProperties_ResourceTrader">
+				<compClass>FantasyBiotech.CompResourceTrader_Steam</compClass>
+				<pipeNet>VR_SteamNet</pipeNet>
+				<consumptionPerTick>1</consumptionPerTick>
+				<idleConsumptionPerTick>1</idleConsumptionPerTick>
+			</li>
+			<li Class="CompProperties_Power">
+				<transmitsPower>false</transmitsPower>
+				<!-- Specify the comp class -->
+				<compClass>FantasyBiotech.CompPowerPlantNeedResource_Steam</compClass>
+				<basePowerConsumption>-1000</basePowerConsumption>
+			</li>
+		</comps>
+		<techLevel>Medieval</techLevel>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+	</ThingDef>
+
+	<ThingDef Abstract="True" Name="VR_SubcoreScannerSteamBase" ParentName="BuildingBase">
+		<thingClass>FantasyBiotech.Building_TonalCoreScanner</thingClass>
+		<containedPawnsSelectable>true</containedPawnsSelectable>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.3</fillPercent>
+		<graphicData>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(3,2)</drawSize>
+			<shadowData>
+				<volume>(3, 2, 1.9)</volume>
+			</shadowData>
+		</graphicData>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<buildingTags>
+				<li>Biotech</li>
+			</buildingTags>
+			<subcoreScannerFixedIngredients>
+				<li>
+					<filter>
+						<thingDefs>
+							<li>Steel</li>
+						</thingDefs>
+					</filter>
+					<count>50</count>
+				</li>
+				<li>
+					<filter>
+						<thingDefs>
+							<li>Uranium</li>
+						</thingDefs>
+					</filter>
+					<count>15</count>
+				</li>
+			</subcoreScannerFixedIngredients>
+		</building>
+		<designationCategory>VR_Artifice</designationCategory>
+		<uiOrder>2430</uiOrder>
+		<canOverlapZones>false</canOverlapZones>
+		<size>(3,2)</size>
+		<hasInteractionCell>true</hasInteractionCell>
+		<interactionCellOffset>(0,0,-1)</interactionCellOffset>
+		<statBases>
+			<Mass>25</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<techLevel>Medieval</techLevel>
+	</ThingDef>
+
+	<ThingDef ParentName="VR_SubcoreScannerSteamBase">
+		<defName>VR_SubcoreSoftscanner_Steam</defName>
+		<label>harmonic sampler</label>
+		<description>A pod with thousands of tiny tissue probes and a high-energy brain scanner. Once a person is inserted, the system uses the probes and scanner to sense a neuro-psychic pattern that it can analog-transfer to a new standard-tier mechanoid subcore. The person will be left temporarily sick, but unharmed.\n\nSubcores are mechanoid brains and producing any mechanoid requires one. Standard-tier subcores produced by this softscanner can only power standard-tier mechanoids.\n\nHigher tier subcores can be created by building a subcore ripscanner.</description>
+		<graphicData>
+			<texPath>Things/Building/Production/SubcoreSoftscanner_Steam</texPath>
+		</graphicData>
+		<statBases>
+			<WorkToBuild>8000</WorkToBuild>
+			<MaxHitPoints>250</MaxHitPoints>
+		</statBases>
+		<costList>
+			<Steel>200</Steel>
+			<Plasteel>50</Plasteel>
+		</costList>
+		<researchPrerequisites>
+			<li>VR_StandardConstructTech</li>
+		</researchPrerequisites>
+		<building>
+			<subcoreScannerOutputDef>VR_TonalCoreRegular</subcoreScannerOutputDef>
+			<subcoreScannerStartEffect>SubcoreSoftscanner_Start</subcoreScannerStartEffect>
+			<subcoreScannerWorking>SubcoreSoftscanner_Working</subcoreScannerWorking>
+			<subcoreScannerComplete>SubcoreSoftscanner_Complete</subcoreScannerComplete>
+			<subcoreScannerHediff>VR_HarmonicSickness</subcoreScannerHediff>
+			<subcoreScannerTicks>15000</subcoreScannerTicks>
+		</building>
+		<comps>
+			<li Class="PipeSystem.CompProperties_ResourceTrader">
+				<compClass>FantasyBiotech.CompResourceTrader_Steam</compClass>
+				<pipeNet>VR_SteamNet</pipeNet>
+				<consumptionPerTick>4</consumptionPerTick>
+				<idleConsumptionPerTick>2</idleConsumptionPerTick>
+			</li>
+			<li Class="CompProperties_Power">
+				<transmitsPower>false</transmitsPower>
+				<!-- Specify the comp class -->
+				<compClass>FantasyBiotech.CompPowerPlantNeedResource_Steam</compClass>
+				<basePowerConsumption>-1000</basePowerConsumption>
+			</li>
+		</comps>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="VR_SubcoreScannerSteamBase">
+		<defName>VR_SubcoreRipscanner_Steam</defName>
+		<label>tonal transcriber</label>
+		<description>A pod with thousands of tissue probe injectors and an ultra-high-power vaporizing brain scanner. Once a person is inserted, the device will insert the probes into their body through the skin while the ripscanner chews through the brain, reading the reflected radiation and destroying the brain in the process. Ripscanning the mind generates a neuro-psychic pattern that the scanner can analog-transfer to a new high-tier mechanoid subcore.\n\nSubcores are mechanoid brains and producing any mechanoid requires one. High-tier subcores produced by this ripscanner can only power high-tier mechanoids.</description>
+		<graphicData>
+			<texPath>Things/Building/Production/SubcoreRipscanner_Steam</texPath>
+		</graphicData>
+		<statBases>
+			<WorkToBuild>1200</WorkToBuild>
+			<MaxHitPoints>250</MaxHitPoints>
+		</statBases>
+		<costList>
+			<Steel>200</Steel>
+			<Plasteel>150</Plasteel>
+		</costList>
+		<researchPrerequisites>
+			<li>VR_HighConstructTech</li>
+		</researchPrerequisites>
+		<building Inherit="False">
+			<subcoreScannerOutputDef>VR_TonalCoreHigh</subcoreScannerOutputDef>
+			<subcoreScannerStartEffect>SubcoreRipscanner_Start</subcoreScannerStartEffect>
+			<destroyBrain>true</destroyBrain>
+			<subcoreScannerWorking>SubcoreRipscanner_Working</subcoreScannerWorking>
+			<subcoreScannerComplete>SubcoreRipscanner_Complete</subcoreScannerComplete>
+			<subcoreScannerTicks>30000</subcoreScannerTicks>
+			<subcoreScannerFixedIngredients>
+				<li>
+					<filter>
+						<thingDefs>
+							<li>Plasteel</li>
+						</thingDefs>
+					</filter>
+					<count>20</count>
+				</li>
+				<li>
+					<filter>
+						<thingDefs>
+							<li>Uranium</li>
+						</thingDefs>
+					</filter>
+					<count>20</count>
+				</li>
+			</subcoreScannerFixedIngredients>
+		</building>
+		<comps>
+			<li Class="PipeSystem.CompProperties_ResourceTrader">
+				<compClass>FantasyBiotech.CompResourceTrader_Steam</compClass>
+				<pipeNet>VR_SteamNet</pipeNet>
+				<consumptionPerTick>6</consumptionPerTick>
+				<idleConsumptionPerTick>4</idleConsumptionPerTick>
+			</li>
+			<li Class="CompProperties_Power">
+				<transmitsPower>false</transmitsPower>
+				<!-- Specify the comp class -->
+				<compClass>FantasyBiotech.CompPowerPlantNeedResource_Steam</compClass>
+				<basePowerConsumption>-1000</basePowerConsumption>
+			</li>
+		</comps>
+		<constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>VR_ConstructBandNode</defName>
+		<label>construct band node</label>
+		<description>A mechanoid-band signal amplifier. Band nodes must be tuned to a specific mechanitor. This will add 1 bandwidth to that mechanitor's total bandwidth, allowing them to control more mechanoids.\n\nOnce a band node is constructed, it can be quickly tuned to a mechanitor. However, retuning a band node to a different mechanitor takes significantly longer.</description>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<canOverlapZones>false</canOverlapZones>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<fillPercent>0.4</fillPercent>
+		<graphicData>
+			<texPath>Things/Building/Misc/BandNode_Steam</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+			<shadowData>
+				<volume>(1.5, 0.35, 1.2)</volume>
+				<offset>(0, 0, -0.15)</offset>
+			</shadowData>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<building>
+			<ai_chillDestination>false</ai_chillDestination>
+			<buildingTags>
+				<li>Biotech</li>
+			</buildingTags>
+		</building>
+		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+		<designationCategory>VR_Artifice</designationCategory>
+		<uiOrder>2440</uiOrder>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>8000</WorkToBuild>
+			<Mass>25</Mass>
+			<Flammability>0.5</Flammability>
+		</statBases>
+		<size>(2,2)</size>
+		<costList>
+			<Steel>125</Steel>
+			<Uranium>20</Uranium>
+			<VR_TonalCoreRegular>1</VR_TonalCoreRegular>
+		</costList>
+		<researchPrerequisites>
+			<li>VR_BasicConstructTech</li>
+		</researchPrerequisites>
+		<comps>
+			<li Class="PipeSystem.CompProperties_ResourceTrader">
+				<compClass>FantasyBiotech.CompResourceTrader_Steam</compClass>
+				<pipeNet>VR_SteamNet</pipeNet>
+				<consumptionPerTick>3</consumptionPerTick>
+				<idleConsumptionPerTick>1</idleConsumptionPerTick>
+			</li>
+			<li Class="CompProperties_Power">
+				<transmitsPower>false</transmitsPower>
+				<!-- Specify the comp class -->
+				<compClass>FantasyBiotech.CompPowerPlantNeedResource_Steam</compClass>
+				<basePowerConsumption>-1000</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_BandNode">
+				<hediff>VR_ConstructBandNode</hediff>
+				<untunedEffect>BandNodeUntuned</untunedEffect>
+				<tuningEffect>BandNodeTuning</tuningEffect>
+				<tunedEffect>BandNodeTuned</tunedEffect>
+				<retuningEffect>BandNodeRetuning</retuningEffect>
+				<tuningCompleteSound>BandNodeTuning_Complete</tuningCompleteSound>
+			</li>
+		</comps>
+		<placeWorkers>
+			<li>PlaceWorker_BandNode</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<techLevel>Medieval</techLevel>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+	    <defName>VR_MechBooster_Steam</defName>
+	    <label>construct booster</label>
+	    <description>A remote energy and enhancement device. Any friendly constructs in its effect radius will move and work faster.</description>
+	    <tickerType>Normal</tickerType>
+	    <drawerType>RealtimeOnly</drawerType>
+	    <fillPercent>0.4</fillPercent>
+	    <graphicData>
+	      <texPath>Things/Building/Power/MechBooster_Steam</texPath>
+	      <graphicClass>Graphic_Single</graphicClass>
+	      <drawSize>(2,2)</drawSize>
+	      <shadowData>
+	        <volume>(0.8, 0.35, 0.8)</volume>
+	        <offset>(0, 0, -0.2)</offset>
+	      </shadowData>
+	      <addTopAltitudeBias>true</addTopAltitudeBias>
+	    </graphicData>
+	    <altitudeLayer>Building</altitudeLayer>
+	    <passability>PassThroughOnly</passability>
+	    <building>
+	      <ai_chillDestination>false</ai_chillDestination>
+	      <buildingTags>
+	        <li>Biotech</li>
+	      </buildingTags>
+	    </building>
+	    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+	    <designationCategory>VR_Artifice</designationCategory>
+	    <uiOrder>2420</uiOrder>
+	    <minifiedDef>MinifiedThing</minifiedDef>
+	    <rotatable>false</rotatable>
+	    <thingCategories>
+		    <li>BuildingsMisc</li>
+	    </thingCategories>
+	    <statBases>
+		    <MaxHitPoints>150</MaxHitPoints>
+		    <WorkToBuild>8000</WorkToBuild>
+		    <Mass>25</Mass>
+
+		    <Flammability>0.5</Flammability>
+	    </statBases>
+	    <size>(2,2)</size>
+	    <costList>
+		    <Steel>100</Steel>
+		    <Uranium>40</Uranium>
+		    <VR_TonalCoreRegular>1</VR_TonalCoreRegular>
+	    </costList>
+	    <researchPrerequisites>
+		    <li>VR_HighConstructTech</li>
+	    </researchPrerequisites>
+	    <comps>
+		    <li Class="PipeSystem.CompProperties_ResourceTrader">
+			    <compClass>FantasyBiotech.CompResourceTrader_Steam</compClass>
+			    <pipeNet>VR_SteamNet</pipeNet>
+			    <consumptionPerTick>5</consumptionPerTick>
+			    <idleConsumptionPerTick>1</idleConsumptionPerTick>
+		    </li>
+		    <li Class="CompProperties_Power">
+			    <transmitsPower>false</transmitsPower>
+			    <!-- Specify the comp class -->
+			    <compClass>FantasyBiotech.CompPowerPlantNeedResource_Steam</compClass>
+			    <basePowerConsumption>-1000</basePowerConsumption>
+		    </li>
+		    <li Class="CompProperties_CauseHediff_AoE">
+		        <range>9.9</range>
+		        <onlyTargetMechs>true</onlyTargetMechs>
+		        <hediff>MechBoost</hediff>
+		        <activeSound>MechBooster_Working</activeSound>
+		      </li>
+	    </comps>
+	    <placeWorkers>
+		    <li>PlaceWorker_ShowCauseHediffAoE</li>
+	    </placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<techLevel>Medieval</techLevel>
+	</ThingDef>
+
+</Defs>

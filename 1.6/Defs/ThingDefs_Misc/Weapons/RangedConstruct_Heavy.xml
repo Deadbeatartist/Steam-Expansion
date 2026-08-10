@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!-- Ranged -->
+	<ThingDef ParentName="VR_MediumConstructGun">
+		<defName>VR_ConstructGun_HeavyCrossbow</defName>
+		<label>heavy steam crossbow</label>
+		<description>A large mechanical crossbow with a steam-charged catapult.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/SteamDoubleCrossbow</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(1.5,1.5)</drawSize>
+		</graphicData>
+		<uiIconScale>0.50</uiIconScale>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+			<Mass>8</Mass>
+			<AccuracyTouch>0.65</AccuracyTouch>
+			<AccuracyShort>0.85</AccuracyShort>
+			<AccuracyMedium>0.85</AccuracyMedium>
+			<AccuracyLong>0.75</AccuracyLong>
+			<RangedWeapon_Cooldown>2.7</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>VR_ConstructGun_HeavyCrossbow</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>VR_Bullet_ConstructGun_Crossbow</defaultProjectile>
+				<warmupTime>1.7</warmupTime>
+				<ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+				<burstShotCount>2</burstShotCount>
+				<range>29.9</range>
+				<soundCast>Bow_Large</soundCast>
+				<muzzleFlashScale>9</muzzleFlashScale>
+			</li>
+		</verbs>
+	</ThingDef>
+
+	<ThingDef ParentName="VR_MediumConstructGun">
+		<defName>VR_ConstructGun_HeavyFlamer</defName>
+		<label>heavy flame cannon</label>
+		<description>Emits a short-range stream of alchemical flame, igniting terrain and melting armor.</description>
+		<graphicData>
+			<texPath>Things/Item/Equipment/WeaponRanged/Flamer</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>(2,2)</drawSize>
+		</graphicData>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<relicChance>0</relicChance>
+		<statBases>
+			<MarketValue>1400</MarketValue>
+			<Mass>20</Mass>
+			<AccuracyTouch>0.40</AccuracyTouch>
+			<AccuracyShort>0.48</AccuracyShort>
+			<AccuracyMedium>0.35</AccuracyMedium>
+			<AccuracyLong>0.26</AccuracyLong>
+			<RangedWeapon_Cooldown>6.0</RangedWeapon_Cooldown>
+		</statBases>
+		<weaponTags>
+			<li>VR_Construct_HeavyFlamer</li>
+		</weaponTags>
+		<verbs>
+			<li>
+				<verbClass>FantasyBiotech.Verb_ConstructFlame</verbClass>
+				<hasStandardCommand>true</hasStandardCommand>
+				<warmupTime>1</warmupTime>
+				<range>6.9</range>
+				<ticksBetweenBurstShots>30</ticksBetweenBurstShots>
+				<burstShotCount>4</burstShotCount>
+				<soundCast>Shot_MiniFlameblaster</soundCast>
+				<muzzleFlashScale>9</muzzleFlashScale>
+				<meleeDamageBaseAmount>4</meleeDamageBaseAmount> 
+				<meleeArmorPenetrationBase>0.2</meleeArmorPenetrationBase>
+			</li>
+		</verbs>
+	</ThingDef>
+
+</Defs>
