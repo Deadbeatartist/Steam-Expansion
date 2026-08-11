@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<!-- Shield -->
+	<VanillaFactionsExpanded.EquipShield>Equip {0} as shield</VanillaFactionsExpanded.EquipShield>
+	<VanillaFactionsExpanded.EquipWarningShieldUnusable>(unusable with {0})</VanillaFactionsExpanded.EquipWarningShieldUnusable>
+	<VanillaFactionsExpanded.EquipWarningShieldUnusableWithWeapon>({0} will be unusable)</VanillaFactionsExpanded.EquipWarningShieldUnusableWithWeapon>
+
+	<VanillaFactionsExpanded.Protects>Protects</VanillaFactionsExpanded.Protects>
+	<VanillaFactionsExpanded.Protects_Desc>What body parts the shield protects.</VanillaFactionsExpanded.Protects_Desc>
+	
+	<!-- Scenario parts -->
+	<VanillaFactionsExpanded.ScenPart_ForcedFactionRelations>Faction relation modifiers</VanillaFactionsExpanded.ScenPart_ForcedFactionRelations>
+	<VanillaFactionsExpanded.NumberRange>{0} to {1}</VanillaFactionsExpanded.NumberRange>
+	<VanillaFactionsExpanded.AllFactions>All factions</VanillaFactionsExpanded.AllFactions>
+	<VanillaFactionsExpanded.AllFactionsIncludingHidden>All factions including hidden</VanillaFactionsExpanded.AllFactionsIncludingHidden>
+	<VanillaFactionsExpanded.AlwaysHostile>Always hostile</VanillaFactionsExpanded.AlwaysHostile>
+	<VanillaFactionsExpanded.AffectHiddenFactions>Affect hidden</VanillaFactionsExpanded.AffectHiddenFactions>
+	<VanillaFactionsExpanded.StartingGoodwill>Starting</VanillaFactionsExpanded.StartingGoodwill>
+	<VanillaFactionsExpanded.NaturalGoodwill>Natural</VanillaFactionsExpanded.NaturalGoodwill>
+
+	<!-- Stat Draw Entries -->
+	<VanillaFactionsExpanded.UsableWithShield>Usable with shields</VanillaFactionsExpanded.UsableWithShield>
+	<VanillaFactionsExpanded.UsableWithShield_Desc>Whether or not this weapon can be used if the character also has a shield equipped.</VanillaFactionsExpanded.UsableWithShield_Desc>
+	<VEF.Weapons.Stat_Thing_MaterialPerCharge>Ammo per charge</VEF.Weapons.Stat_Thing_MaterialPerCharge>
+	<VEF.Weapons.Stat_Thing_MaterialPerCharge_Value>{0} {1} per charge (total {2} charges)</VEF.Weapons.Stat_Thing_MaterialPerCharge_Value>
+    <VEF.Weapons.Stat_Thing_MaterialPerCharge_Desc>The amount of {0} per charge this ability needs to be recharged.</VEF.Weapons.Stat_Thing_MaterialPerCharge_Desc>
+
+	<!-- New Faction Spawning -->
+	<VanillaFactionsExpanded.FactionTitle>New faction: {FactionName}</VanillaFactionsExpanded.FactionTitle>
+	<VanillaFactionsExpanded.ModInfo>This faction is added by {ModName} and not currently present in your game.</VanillaFactionsExpanded.ModInfo>
+	<VanillaFactionsExpanded.AnUnknownMod>an unknown mod</VanillaFactionsExpanded.AnUnknownMod>
+	<VanillaFactionsExpanded.HiddenFactionInfo>This is a hidden faction and won't show up in your faction list.</VanillaFactionsExpanded.HiddenFactionInfo>
+	<VanillaFactionsExpanded.RequiredFactionInfo>It is marked as required by {ModName}.</VanillaFactionsExpanded.RequiredFactionInfo>
+	<VanillaFactionsExpanded.NonSpawningFactionInfo>This faction is marked as non-spawning and you should probably just ignore it.</VanillaFactionsExpanded.NonSpawningFactionInfo>
+	<VanillaFactionsExpanded.FactionSelectOption>Please select how to proceed:</VanillaFactionsExpanded.FactionSelectOption>
+	<VanillaFactionsExpanded.FactionButtonAdd>Add the faction</VanillaFactionsExpanded.FactionButtonAdd>
+	<VanillaFactionsExpanded.FactionButtonAddFull>Add the faction with settlements</VanillaFactionsExpanded.FactionButtonAddFull>
+	<VanillaFactionsExpanded.FactionButtonSkip>Do nothing</VanillaFactionsExpanded.FactionButtonSkip>
+	<VanillaFactionsExpanded.FactionButtonIgnore>Don't ask for this faction again</VanillaFactionsExpanded.FactionButtonIgnore>
+	<VanillaFactionsExpanded.FactionMessageFailed>Failed to add the faction.</VanillaFactionsExpanded.FactionMessageFailed>
+	<VanillaFactionsExpanded.FactionMessageFailedFull>Failed to create a faction with settlements.</VanillaFactionsExpanded.FactionMessageFailedFull>
+	<VanillaFactionsExpanded.FactionMessageSuccessFull>Added {FactionName} with {Amount} settlements.</VanillaFactionsExpanded.FactionMessageSuccessFull>
+	<VanillaFactionsExpanded.FactionMessageSuccess>Added {FactionName}.</VanillaFactionsExpanded.FactionMessageSuccess>
+	<VanillaFactionsExpanded.FactionDiscoveryRequired>It is marked as required, and you must add it to the game.</VanillaFactionsExpanded.FactionDiscoveryRequired>
+	<VanillaFactionsExpanded.FactionFailedMessage>Failed to generate this faction. It is recommended to try again, but you can now skip adding this faction. Skipping may cause issues.</VanillaFactionsExpanded.FactionFailedMessage>
+	<VanillaFactionsExpanded.FactionRequired>{FACTION} cannot be disabled{REQUIRED_multiple ? , you need at least {REQUIRED} factions of that type. : .}</VanillaFactionsExpanded.FactionRequired>
+	<VanillaFactionsExpanded.FactionRecommended>{REQUIRED_multiple ? It is recommended to have at least {REQUIRED} factions of {FACTION} type, but currently there's only {COUNT}. : It is recommended to enable {FACTION}.}</VanillaFactionsExpanded.FactionRecommended>
+
+	<VanillaFactionsExpanded.FactionSettlementsToSpawn>Settlements to spawn (recommended are {0}): {1}</VanillaFactionsExpanded.FactionSettlementsToSpawn>
+	<VanillaFactionsExpanded.FactionMinDistance>The minimum distance from player bases (recommended are {0}): {1}</VanillaFactionsExpanded.FactionMinDistance>
+	<VanillaFactionsExpanded.FactionButtonSpawn>Spawn</VanillaFactionsExpanded.FactionButtonSpawn>
+	<VanillaFactionsExpanded.FactionButtonCancel>Cancel</VanillaFactionsExpanded.FactionButtonCancel>
+
+	<VSE.Reinforcements>Reinforcements</VSE.Reinforcements>
+	<VSE.ReinforcementsDesc>Seeing that your forces suffered losses, {FACTION_name} has decided to reinforce their raiding force</VSE.ReinforcementsDesc>
+	<VSE.CostGoodwill>cost: {0} goodwill</VSE.CostGoodwill>
+
+	<VWEL_ToggleHotshotLabel>Weapon warm-up</VWEL_ToggleHotshotLabel>
+	<VWEL_ToggleHotshotDesc>Shots fired when standing still warm-up the weapon allowing for increased firing speed. Overheating can lead to detonation.</VWEL_ToggleHotshotDesc>
+
+	<VFE_DeepDrillNo>Deep drill cannot be used with {0}.</VFE_DeepDrillNo>
+	
+    <VEF.TeleportTo>Teleport to {0}</VEF.TeleportTo>
+	
+	<!-- Lootboxes -->
+	
+	<VEF.TotalMarketValueRange>Market value range (base)</VEF.TotalMarketValueRange>
+	<VEF.TotalMarketValueRange_Desc>Total market value range (minimum and maximum) of the objects that can be found by opening this loot box.</VEF.TotalMarketValueRange_Desc>
+	<VEF.TotalMarketValueRange_Quality>Market value range (by quality)</VEF.TotalMarketValueRange_Quality>
+	<VEF.TotalMarketValueRange_Quality_Desc>Total market value range (minimum and maximum) of the objects that can be found by opening this loot box. Box quality has modified the base value by a factor of {0}</VEF.TotalMarketValueRange_Quality_Desc>
+	
+	<!-- Extractable plants -->
+	<VPE_MinifiedFlowerWillDieIn>Extracted flower will die in {time} unless replanted.</VPE_MinifiedFlowerWillDieIn>
+	<VPE_ExtractFlower>Extract flower</VPE_ExtractFlower>
+	<VPE_ExtractFlower_Desc>Extract this flower while keeping it alive, so that it can be replanted elsewhere.</VPE_ExtractFlower_Desc>
+	<VPE_CancelExtractFlower>Cancel extraction</VPE_CancelExtractFlower>
+	<VPE_CancelExtractFlower_Desc>Cancel extracting this flower.</VPE_CancelExtractFlower_Desc>
+	<VPE_ReplantFlower>Replant</VPE_ReplantFlower>
+	<VPE_ReplantFlower_Desc>The flower is currently packaged up for storage and transport. Use this command to replant it in the new location.</VPE_ReplantFlower_Desc>
+	
+	<!-- Blooming plants -->
+	<VPE_RealAge>Age: {0}</VPE_RealAge>
+	<VPE_FlowerIsBlooming>Flower is blooming</VPE_FlowerIsBlooming>
+	<VPE_BeautyByAge>Beauty by age: +{0}</VPE_BeautyByAge>
+	<VPE_BeautyByBloming>Beauty by blooming: x{0}</VPE_BeautyByBloming>
+	<VPE_BeautyByWeeds>Beauty because of weeds: {0}</VPE_BeautyByWeeds>
+	<VPE_BeautyByLeafless>Leafless beauty: {0}</VPE_BeautyByLeafless>
+	<VPE_LeaflessBeauty>Leafless beauty</VPE_LeaflessBeauty>
+	<VPE_LeaflessBeauty_Desc>Blooming flowers are pretty ugly when leafless due to cold. They won't die just for being leafless, but their beauty will be greatly affected.</VPE_LeaflessBeauty_Desc>
+	<VPE_MustBeGrown>Plant must be fully grown before you can add age to it</VPE_MustBeGrown>
+	<VPE_AgeBeautyModifier>Age beauty modifier</VPE_AgeBeautyModifier>
+	<VPE_AgeBeautyModifier_Desc>The beauty of this plant will increase by this amount for every year it is kept alive, up to a maximum of +{0}.</VPE_AgeBeautyModifier_Desc>
+	<VPE_BloomBeautyModifier>Bloom beauty modifier</VPE_BloomBeautyModifier>
+	<VPE_BloomBeautyModifier_Desc>The beauty of this plant will be multiplied by this amount when in its blooming stage.</VPE_BloomBeautyModifier_Desc>
+	<VPE_BloomingPeriod>Blooming period</VPE_BloomingPeriod>
+	<VPE_BloomingPeriod_Desc>This flower will enter a blooming stage in this period, or the equivalent in days of the year in permanent summer / winter.</VPE_BloomingPeriod_Desc>
+	<VPE_BloomTemperatureMin>Minimum bloom temperature</VPE_BloomTemperatureMin>
+	<VPE_BloomTemperatureMin_Desc>The minimum temperature the plant will need to enter a blooming stage.\n\n{0}</VPE_BloomTemperatureMin_Desc>
+	<VPE_BloomTemperatureMax>Maximum bloom temperature</VPE_BloomTemperatureMax>
+	<VPE_BloomTemperatureMax_Desc>The maximum temperature the plant will need to be below to enter a blooming stage.\n\n{0}</VPE_BloomTemperatureMax_Desc>
+	<VPE_CanBloom>If the blooming stops due to low temperature, this flower can enter a blooming stage again if the conditions improve.</VPE_CanBloom>
+	<VPE_CantBloom>If the blooming stops due to low temperature, this flower won't be able to bloom again until next year!</VPE_CantBloom>
+	<VPE_DeadlyColdTemperature>Deadly cold temperature</VPE_DeadlyColdTemperature>
+	<VPE_DeadlyColdTemperature_Desc>Below this temperature, the plant will start dying.</VPE_DeadlyColdTemperature_Desc>
+	<VPE_TempTooLowForBlooming>Temperature too low for blooming</VPE_TempTooLowForBlooming>
+	<VPE_TempTooHighForBlooming>Temperature too high for blooming</VPE_TempTooHighForBlooming>
+	<VPE_RemoveWeeds>Remove weeds</VPE_RemoveWeeds>
+	<VPE_RemoveWeeds_Desc>Remove the weeds that are negatively impacting this flower's beauty.</VPE_RemoveWeeds_Desc>
+	<VPE_CancelWeedRemoval>Cancel weed removal</VPE_CancelWeedRemoval>
+	<VPE_CancelWeedRemoval_Desc>Cancel removing the weeds from this flower.</VPE_CancelWeedRemoval_Desc>
+	<VEF_LetterLabelWeeds>Weeds: {PLANTDEF_labelPlural}</VEF_LetterLabelWeeds>
+    <VEF_LetterWeeds>Weeds have spread across your {PLANTDEF_labelPlural}, as well as other nearby blooming flowers, greatly affecting their beauty.\n\nYou can order your colonists to remove the weeds, though it is a time consuming process.</VEF_LetterWeeds>
+</LanguageData>

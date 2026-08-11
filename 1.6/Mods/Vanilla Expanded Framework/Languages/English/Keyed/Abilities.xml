@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<VFEA.AbilityDisableReasonCooldown>{0} is on cooldown for {1}</VFEA.AbilityDisableReasonCooldown>
+	<VFEA.AbilityDisableReasonGeneral>{0} doesn't meet the requirements</VFEA.AbilityDisableReasonGeneral>
+
+	<VFEA.AbilityStatsPower>Power</VFEA.AbilityStatsPower>
+	<VFEA.AbilityStatsDuration>Duration</VFEA.AbilityStatsDuration>
+	
+	<VFEA.TargetMustBeHostile>Target must be hostile</VFEA.TargetMustBeHostile>
+
+	<VFEA.MinRadius>Minimum radius</VFEA.MinRadius>
+
+	<VFEA.RClickToAuto>Right-click to enable autocasting.</VFEA.RClickToAuto>
+	<VFEA.RClickToNoAuto>Right-click to disable autocasting.</VFEA.RClickToNoAuto>
+	
+	<VEF_DisableCorpseDecaying>Disable corpse decaying</VEF_DisableCorpseDecaying>
+	<VEF_DisableCorpseDecayingDesc>Disable the constant corpse decaying ability of this animal.</VEF_DisableCorpseDecayingDesc>
+	<VEF_EnableCorpseDecaying>Enable corpse decaying</VEF_EnableCorpseDecaying>
+	<VEF_EnableCorpseDecayingDesc>Enable the constant corpse decaying ability of this animal.</VEF_EnableCorpseDecayingDesc>
+	
+	<VEF_DisableDigging>Disable digging for food</VEF_DisableDigging>
+	<VEF_DisableDiggingDesc>Disable the ability to dig the terrain for food of this animal.</VEF_DisableDiggingDesc>
+	<VEF_EnableDigging>Enable digging for food</VEF_EnableDigging>
+	<VEF_EnableDiggingDesc>Enable the ability to dig the terrain for food of this animal.</VEF_EnableDiggingDesc>
+	
+	<VEF_DisableGas>Disable gas production</VEF_DisableGas>
+	<VEF_DisableGasDesc>Disable the ability to produce gas of this animal.</VEF_DisableGasDesc>
+	<VEF_EnableGas>Enable gas production</VEF_EnableGas>
+	<VEF_EnableGasDesc>Enable the ability to produce gas of this animal.</VEF_EnableGasDesc>
+</LanguageData>
